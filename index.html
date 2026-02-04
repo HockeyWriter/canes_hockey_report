@@ -6,250 +6,54 @@
   <title>Rinkside Report — San Antonio Men’s Advanced League</title>
   <style>
     :root{
-      --bg:#0b0c0f;
-      --ink:#121212;
-      --muted:#6b7280;
-      --rule:#e6e6e6;
-      --paper:#ffffff;
-      --chip:#f3f4f6;
-      --shadow: 0 8px 28px rgba(16,24,40,.06);
+      --bg:#0b0c0f; --ink:#121212; --muted:#6b7280; --rule:#e6e6e6;
+      --paper:#ffffff; --chip:#f3f4f6; --shadow:0 8px 28px rgba(16,24,40,.06);
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--ink);
-      background:#f6f7f9;
-      line-height:1.55;
-    }
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:#f6f7f9;line-height:1.55}
 
-    /* Top nav */
-    .topbar{
-      background:var(--bg);
-      color:#fff;
-      padding:14px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .brand{
-      display:flex;
-      gap:10px;
-      align-items:baseline;
-      font-weight:700;
-      letter-spacing:.2px;
-      white-space:nowrap;
-    }
-    .brand .dot{
-      width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block
-    }
+    /* Top bar */
+    .topbar{background:var(--bg);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;gap:10px;align-items:baseline;font-weight:700}
+    .brand .dot{width:10px;height:10px;border-radius:2px;background:#fff;display:inline-block}
     .brand span{font-size:14px;opacity:.9}
     .brand strong{font-size:16px}
-    .nav{
-      display:flex;
-      gap:16px;
-      font-size:13px;
-      opacity:.88;
-      white-space:nowrap;
-      overflow:auto;
-    }
+    .nav{display:flex;gap:16px;font-size:13px;opacity:.85}
     .nav a{color:#fff;text-decoration:none}
-    .nav a:hover{opacity:.8}
 
     /* Layout */
-    .wrap{
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 22px 18px 60px;
-      display:grid;
-      grid-template-columns: 1fr 330px;
-      gap: 22px;
-    }
-    @media (max-width: 980px){
-      .wrap{grid-template-columns:1fr}
-    }
+    .wrap{max-width:1080px;margin:0 auto;padding:22px 18px 60px;display:grid;grid-template-columns:1fr 330px;gap:22px}
+    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
 
     /* Cards */
-    .card{
-      background:var(--paper);
-      border:1px solid #ededed;
-      border-radius:14px;
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
+    .card{background:var(--paper);border:1px solid #ededed;border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
     .pad{padding:18px}
-    .section-title{
-      margin:0 0 12px;
-      font-size:13px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#374151;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .section-title .muted{color:var(--muted);font-weight:500;letter-spacing:.08em;text-transform:none}
 
-    /* Pills */
-    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .pill{
-      display:inline-block;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:var(--chip);
-      border:1px solid #e5e7eb;
-      color:#111827;
-      white-space:nowrap;
-    }
+    .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:10px}
+    .tag{background:var(--chip);border:1px solid #e5e7eb;padding:3px 10px;border-radius:999px;font-weight:700;color:#374151}
 
-    /* Hero */
-    .hero{
-      padding: 22px 22px 18px;
-    }
-    .eyebrow{
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--muted);
-      display:flex;
-      gap:10px;
-      align-items:center;
-      margin-bottom:10px;
-    }
-    .eyebrow .tag{
-      background:var(--chip);
-      border:1px solid #e5e7eb;
-      padding:3px 10px;
-      border-radius:999px;
-      font-weight:700;
-      letter-spacing:.08em;
-      color:#374151;
-    }
-    .hero h1{
-      margin:0 0 10px;
-      font-size:34px;
-      line-height:1.12;
-      letter-spacing:-.02em;
-    }
-    .hero p{
-      margin:0 0 14px;
-      color:#374151;
-      font-size:16px;
-      max-width: 70ch;
-    }
-    .meta{
-      font-size:13px;
-      color:var(--muted);
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-    }
-    .meta .sep{opacity:.35}
+    .hero{padding:22px}
+    .hero h1{margin:0 0 10px;font-size:32px;line-height:1.12}
+    .hero p{margin:0 0 14px;color:#374151;font-size:16px;max-width:70ch}
 
-    .cta{
-      margin-top:16px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .btn{
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:10px;
-      background:#111827;
-      color:white;
-      text-decoration:none;
-      font-size:14px;
-      font-weight:700;
-    }
-    .btn:hover{opacity:.9}
-    .btn.secondary{
-      background:white;
-      color:#111827;
-      border:1px solid #e5e7eb;
-    }
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:10px;background:#111827;color:white;text-decoration:none;font-size:14px;font-weight:700}
+    .btn.secondary{background:white;color:#111827;border:1px solid #e5e7eb}
 
-    /* List */
-    .list{
-      display:flex;
-      flex-direction:column;
-      gap:0;
-    }
-    .row{
-      padding:14px 18px;
-      border-top:1px solid var(--rule);
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-      justify-content:space-between;
-    }
-    .row:first-child{border-top:none}
-    .row a{
-      text-decoration:none;
-      color:inherit;
-      flex:1;
-    }
-    .kicker{
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:6px;
-    }
-    .headline{
-      font-size:16px;
-      font-weight:800;
-      line-height:1.25;
-      margin:0 0 6px;
-    }
-    .dek{
-      margin:0;
-      color:#374151;
-      font-size:13px;
-      line-height:1.35;
-      max-width: 70ch;
-    }
-    .rightmeta{
-      font-size:12px;
-      color:var(--muted);
-      white-space:nowrap;
-      padding-top:18px;
-    }
+    .list .row{padding:14px 18px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:14px}
+    .row a{text-decoration:none;color:inherit;flex:1}
+    .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .headline{font-size:16px;font-weight:900;margin:0 0 6px}
+    .dek{margin:0;font-size:13px;color:#374151;max-width:70ch}
+    .meta{font-size:12px;color:var(--muted);white-space:nowrap}
 
-    /* Sidebar cards */
-    .side{
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-    }
-    .mini{
-      font-size:13px;
-      color:#111;
-      line-height:1.4;
-    }
-    .mini .muted{color:var(--muted)}
-    .ul{
-      margin:8px 0 0;
-      padding-left:18px;
-      font-size:13px;
-      color:#111;
-    }
-    .ul li{margin:6px 0}
+    .section-title{padding:14px 18px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#374151;border-top:1px solid var(--rule)}
 
-    /* Footer */
-    .footer{
-      max-width:1080px;
-      margin: 0 auto;
-      padding: 10px 18px 40px;
-      color:var(--muted);
-      font-size:12px;
-      text-align:center;
-    }
+    .side{display:flex;flex-direction:column;gap:16px}
+    .mini{font-size:13px;line-height:1.4}
+    .muted{color:var(--muted)}
+
+    .footer{max-width:1080px;margin:0 auto;padding:10px 18px 40px;color:var(--muted);font-size:12px;text-align:center}
   </style>
 </head>
 
@@ -261,11 +65,10 @@
       <span>San Antonio Men’s Advanced League</span>
     </div>
     <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="#">League</a>
       <a href="#">Canes</a>
       <a href="#">Recaps</a>
-      <a href="#">Standings</a>
-      <a href="#">Power Rankings</a>
-      <a href="#">Features</a>
     </div>
   </div>
 
@@ -274,93 +77,74 @@
     <div class="card">
       <div class="hero">
         <div class="eyebrow">
-          <span class="tag">Latest</span>
-          <span>GAME RECAP</span>
-          <span>•</span>
-          <span>Week 4</span>
+          <span class="tag">This Week</span>
+          <span>THE WEEKLY 3-PACK</span>
         </div>
 
-        <h1>Canes get goalied in 1–0 loss to Owls</h1>
+        <h1>Week 4 coverage: league update, Canes preview, and the recap</h1>
         <p>
-          A low-event game decided by a single moment. The Canes carried play for long stretches but couldn’t find a finish
-          in a one-goal loss that keeps the early-season theme intact: tight margins, no free points.
+          Your weekly rhythm: start with the league-wide temperature check,
+          then the Canes preview, then the postgame story.
         </p>
 
-        <div class="meta">
-          <span>By Rinkside Staff</span>
-          <span class="sep">•</span>
-          <span>3 min read</span>
-          <span class="sep">•</span>
-          <span>Week 4</span>
-        </div>
-
         <div class="cta">
-          <a class="btn" href="week-4-recap-owls.html">Read the recap</a>
-          <a class="btn secondary" href="week-3-recap-banditos.html">Previous: 5–0 win</a>
-        </div>
-
-        <div class="pillrow">
-          <span class="pill">Canes</span>
-          <span class="pill">Week 4</span>
-          <span class="pill">Recap</span>
-          <span class="pill">Goalie Duel</span>
+          <a class="btn" href="week-3-power-rankings.html">Read: Week 3 Power Rankings</a>
+          <a class="btn secondary" href="week-4-preview-owls.html">Read: Canes vs Owls Preview</a>
+          <a class="btn secondary" href="week-4-recap-owls.html">Read: Canes vs Owls Recap</a>
         </div>
       </div>
 
       <div class="list">
-        <div class="section-title pad" style="border-top:1px solid var(--rule); margin:0;">
-          <span>Recent stories</span>
-          <span class="muted">Canes beat</span>
+        <div class="section-title">This week’s stories (in order)</div>
+
+        <div class="row">
+          <a href="week-3-power-rankings.html">
+            <div class="kicker">League Beat • Power Rankings</div>
+            <div class="headline">Week 3 Power Rankings: early tiers emerge</div>
+            <p class="dek">Chanclas set the pace as the middle tier stays volatile.</p>
+          </a>
+          <div class="meta">5 min</div>
+        </div>
+
+        <div class="row">
+          <a href="week-4-preview-owls.html">
+            <div class="kicker">Game Preview • Canes</div>
+            <div class="headline">Week 4 Preview: Canes vs Owls</div>
+            <p class="dek">A low-event matchup where the first finish could decide everything.</p>
+          </a>
+          <div class="meta">4 min</div>
         </div>
 
         <div class="row">
           <a href="week-4-recap-owls.html">
-            <div class="kicker">Game Recap • Week 4</div>
-            <div class="headline">Owls 1, Canes 0: the Canes create chances but come up empty</div>
-            <p class="dek">A night where effort wasn’t the issue — finishing was.</p>
+            <div class="kicker">Game Recap • Canes</div>
+            <div class="headline">Owls 1, Canes 0: no margin for error</div>
+            <p class="dek">Strong process, no reward, and another one-goal lesson.</p>
           </a>
-          <div class="rightmeta">3 min</div>
+          <div class="meta">3 min</div>
         </div>
+
+        <div class="section-title">Archive</div>
 
         <div class="row">
           <a href="week-3-recap-banditos.html">
-            <div class="kicker">Game Recap • Week 3</div>
-            <div class="headline">Statement night: Canes blank Banditos 5–0</div>
-            <p class="dek">The Canes’ most complete performance: structure, pressure, and a shutout.</p>
+            <div class="headline">Canes blank Banditos 5–0</div>
           </a>
-          <div class="rightmeta">3 min</div>
+          <div class="meta">Week 3</div>
         </div>
 
         <div class="row">
           <a href="week-2-recap-pink-whitney.html">
-            <div class="kicker">Game Recap • Week 2</div>
-            <div class="headline">Canes grind out a 3–2 win over Pink Whitney</div>
-            <p class="dek">A tighter, more disciplined response after the opener.</p>
+            <div class="headline">Canes edge Pink Whitney 3–2</div>
           </a>
-          <div class="rightmeta">3 min</div>
+          <div class="meta">Week 2</div>
         </div>
 
         <div class="row">
           <a href="week-1-recap-fridge-raiders.html">
-            <div class="kicker">Game Recap • Week 1</div>
-            <div class="headline">Canes drop opener in track meet: Fridge Raiders 5, Canes 4</div>
-            <p class="dek">Four goals weren’t enough in a high-event start to the season.</p>
+            <div class="headline">Canes fall to Fridge Raiders 5–4</div>
           </a>
-          <div class="rightmeta">3 min</div>
-        </div>
-
-        <div class="section-title pad" style="border-top:1px solid var(--rule); margin:0;">
-          <span>Coming soon</span>
-          <span class="muted">template slot</span>
-        </div>
-
-        <div class="row">
-          <a href="#">
-            <div class="kicker">League Beat • Week 4</div>
-            <div class="headline">Where the Canes stand after Week 4</div>
-            <p class="dek">Standings update + league storylines will be published once the table updates.</p>
-          </a>
-          <div class="rightmeta">—</div>
+          <div class="meta">Week 1</div>
         </div>
       </div>
     </div>
@@ -368,37 +152,18 @@
     <!-- SIDEBAR -->
     <div class="side">
       <div class="card pad">
-        <div class="section-title"><span>Team snapshot</span></div>
+        <div class="eyebrow"><span class="tag">Publishing cadence</span></div>
         <div class="mini">
-          <div><strong>Identity:</strong> <span class="muted">Hard-working, tight games, strong goaltending, inconsistent finishing</span></div>
-          <div style="margin-top:8px;"><strong>Season theme:</strong> <span class="muted">Margins decide everything</span></div>
-          <div style="margin-top:8px;"><strong>Best result:</strong> <span class="muted">5–0 vs Banditos (Week 3)</span></div>
-          <div style="margin-top:8px;"><strong>Latest:</strong> <span class="muted">1–0 loss vs Owls (Week 4)</span></div>
-        </div>
-        <div class="pillrow">
-          <span class="pill">Canes</span>
-          <span class="pill">Advanced League</span>
-          <span class="pill">Recaps</span>
+          <p><strong>Early week:</strong> League power rankings</p>
+          <p><strong>Game day:</strong> Canes preview</p>
+          <p><strong>Postgame:</strong> Canes recap</p>
         </div>
       </div>
 
       <div class="card pad">
-        <div class="section-title"><span>Players to watch</span></div>
-        <div class="mini">
-          <p style="margin:0 0 10px;"><strong>Andrew Sands</strong><br><span class="muted">Motor, shot, everywhere at once</span></p>
-          <p style="margin:0 0 10px;"><strong>Kenneth Lee (A)</strong><br><span class="muted">Elite IQ, monster snapshot, leader</span></p>
-          <p style="margin:0;"><strong>David Marples</strong><br><span class="muted">Blue-line driver, best hands in the league</span></p>
-        </div>
-      </div>
-
-      <div class="card pad">
-        <div class="section-title"><span>Next steps</span></div>
-        <div class="mini">
-          <ul class="ul">
-            <li>Publish weekly standings column when the table updates.</li>
-            <li>Add a “Features” page for player spotlights.</li>
-            <li>Optional: add a “Power Rankings” page.</li>
-          </ul>
+        <div class="eyebrow"><span class="tag">Next up</span></div>
+        <div class="mini muted">
+          Week 4 standings update once the table refreshes.
         </div>
       </div>
     </div>
