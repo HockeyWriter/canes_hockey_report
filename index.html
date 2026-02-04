@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Where the Canes Stand After Week 3: Better Than the Record</title>
+  <style>
+    :root{
+      --bg:#0b0c0f;
+      --ink:#121212;
+      --muted:#6b7280;
+      --rule:#e6e6e6;
+      --paper:#ffffff;
+      --accent:#111827;
+      --chip:#f3f4f6;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:#f6f7f9;
+      line-height:1.55;
+    }
+    /* Top nav */
+    .topbar{
+      background:var(--bg);
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex;
+      gap:10px;
+      align-items:baseline;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .brand .dot{
+      width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block
+    }
+    .brand span{font-size:14px;opacity:.9}
+    .brand strong{font-size:16px}
+    .nav{
+      display:flex;
+      gap:16px;
+      font-size:13px;
+      opacity:.85;
+      white-space:nowrap;
+    }
+    .nav a{color:#fff;text-decoration:none}
+    .nav a:hover{opacity:.75}
+
+    /* Layout */
+    .wrap{
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 26px 18px 60px;
+      display:grid;
+      grid-template-columns: 1fr 300px;
+      gap: 28px;
+    }
+    @media (max-width: 980px){
+      .wrap{grid-template-columns: 1fr}
+    }
+    .paper{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      box-shadow: 0 8px 28px rgba(16,24,40,.06);
+      overflow:hidden;
+    }
+    .article{
+      padding: 34px 34px 26px;
+    }
+    @media (max-width: 560px){
+      .article{padding: 22px 18px}
+    }
+
+    /* Eyebrow + title */
+    .eyebrow{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .eyebrow .pill{
+      background:var(--chip);
+      border:1px solid #e5e7eb;
+      padding:3px 10px;
+      border-radius:999px;
+      font-weight:600;
+      letter-spacing:.08em;
+      color:#374151;
+    }
+    h1{
+      margin:10px 0 10px;
+      font-size: 38px;
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+    .subhead{
+      font-size:18px;
+      color:#374151;
+      max-width: 58ch;
+      margin: 0 0 18px;
+    }
+
+    /* Byline row */
+    .byline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+      padding: 16px 0 0;
+      margin-bottom: 18px;
+      border-top:1px solid var(--rule);
+    }
+    .byline .author{
+      font-weight:700;
+      font-size:14px;
+    }
+    .byline .meta{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .byline .sep{opacity:.35}
+
+    /* Body */
+    .content{
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-size: 18px;
+      color:#111;
+      max-width: 72ch;
+    }
+    .content p{margin: 0 0 16px}
+    .content h2{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:16px;
+      letter-spacing:.02em;
+      margin: 28px 0 10px;
+      text-transform:uppercase;
+      color:#111827;
+    }
+    .rule{height:1px;background:var(--rule);margin: 22px 0}
+
+    /* Callouts */
+    .takeaways{
+      background:#fbfbfc;
+      border:1px solid #ececec;
+      border-radius:12px;
+      padding:14px 16px;
+      margin: 18px 0 22px;
+    }
+    .takeaways strong{
+      display:block;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#374151;
+      margin-bottom:8px;
+    }
+    .takeaways ul{
+      margin:0;
+      padding-left:18px;
+      color:#111;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:14px;
+      line-height:1.45;
+    }
+    .pull{
+      border-left:3px solid #111827;
+      padding: 6px 0 6px 14px;
+      margin: 20px 0 22px;
+      color:#111827;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:16px;
+      line-height:1.45;
+    }
+    .pull em{color:#374151;font-style:normal}
+
+    /* Sidebar */
+    .side{
+      position:sticky;
+      top:14px;
+      align-self:start;
+    }
+    @media (max-width: 980px){
+      .side{position:static}
+    }
+    .card{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      padding:16px;
+      box-shadow: 0 8px 28px rgba(16,24,40,.05);
+      margin-bottom:16px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#374151;
+    }
+    .mini{
+      font-size:13px;
+      color:#111;
+      line-height:1.4;
+    }
+    .mini .muted{color:var(--muted)}
+    .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--chip);
+      border:1px solid #e5e7eb;
+      color:#111827;
+      white-space:nowrap;
+    }
+
+    /* Footer */
+    .footer{
+      max-width:1080px;
+      margin: 0 auto;
+      padding: 10px 18px 40px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Rinkside Report</strong>
+      <span>San Antonio Men’s Advanced League</span>
+    </div>
+    <div class="nav">
+      <a href="#">Canes</a>
+      <a href="#">Standings</a>
+      <a href="#">Schedule</a>
+      <a href="#">Power Rankings</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- Article -->
+    <div class="paper">
+      <div class="article">
+        <div class="eyebrow">
+          <span class="pill">LEAGUE BEAT</span>
+          <span>Canes</span>
+          <span>•</span>
+          <span>Week 3</span>
+        </div>
+
+        <h1>Where the Canes stand after Week 3: Better than the record</h1>
+        <p class="subhead">
+          The Canes are working their way into the top half of the table, but the real story is how close the margins have been — and why a 1–0 loss can be both warning sign and reassurance.
+        </p>
+
+        <div class="byline">
+          <div class="author">By Rinkside Staff</div>
+          <div class="meta"><span class="sep">•</span> Updated Feb 2026</div>
+          <div class="meta"><span class="sep">•</span> 4 min read</div>
+        </div>
+
+        <div class="takeaways">
+          <strong>Key takeaways</strong>
+          <ul>
+            <li>The Canes are competitive every night, backed by steady goaltending and elite effort.</li>
+            <li>They’re generating chances — but finishing remains the difference in one-goal games.</li>
+            <li>David Marples and Andrew Sands continue to drive play; Kenneth Lee is the quiet stabilizer.</li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <p>
+            Three weeks into the season, the Canes sit in the upper half of the table, but the numbers don’t quite capture the story unfolding on the ice.
+            This is a team that looks organized, skates well, and rarely gets outworked — and yet it’s also a team living on the thin edge where one bounce becomes a headline.
+          </p>
+
+          <p>
+            Monday’s <strong>1–0 loss to the Owls</strong>, a result not yet reflected in the standings, felt like a microcosm of the early season: long stretches of pressure, quality looks created,
+            and a game that stayed within reach all night — until it didn’t.
+          </p>
+
+          <div class="pull">
+            “The Canes are close. The question is whether they can turn close into points before the table tightens.”
+            <br><em>— League beat notes, Week 3</em>
+          </div>
+
+          <h2>The standings say one thing — the games say another</h2>
+          <p>
+            The Canes have shown they can score in bunches, but they’ve also proven vulnerable to low-event games where execution matters more than volume.
+            Against the Owls, they generated pressure and pushed late, but the finishing touch never arrived.
+          </p>
+
+          <p>
+            That’s not a structural problem — it’s a conversion problem. The process is there. The results have been streaky.
+            In a league where most games are decided by one or two goals, that margin isn’t a detail; it’s the season.
+          </p>
+
+          <div class="rule"></div>
+
+          <h2>Why the Canes are still a factor</h2>
+          <p>
+            Start with the foundation. <strong>Michael Brown</strong> continues to keep games tight, giving the Canes a chance even on nights when offense is hard to come by.
+            <strong>Andrew Sands</strong> remains the engine — skating hard, getting pucks back, and forcing sequences to happen.
+            <strong>Kenneth Lee</strong> quietly controls the tempo with smart reads and tape-to-tape touches.
+          </p>
+
+          <p>
+            And then there’s the blue line: <strong>David Marples</strong> is still the best puck handler on the ice in most matchups, driving offense from the back end in ways few teams can replicate.
+            When the Canes look dangerous, he’s often at the center of it.
+          </p>
+
+          <div class="rule"></div>
+
+          <h2>What’s holding them back</h2>
+          <p>
+            The early-season concern is simple: <strong>finishing</strong>. The Canes are creating chances — off forechecks, off entries, off point shots — but they haven’t consistently cashed them in.
+            That puts pressure on every defensive mistake, because the margin for error disappears when one goal has to feel like three.
+          </p>
+
+          <p>
+            The good news is this isn’t about effort. It’s about timing. If a couple of the grinders get one to drop, the narrative flips quickly.
+            For now, the Canes remain exactly what they look like on the ice: <strong>a hard-working team that’s closer than the standings suggest — and dangerous if the offense wakes up.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="side">
+      <div class="card">
+        <h3>Team snapshot</h3>
+        <div class="mini">
+          <div><strong>Identity:</strong> <span class="muted">Hard-working, tight games, strong goaltending, inconsistent finishing</span></div>
+          <div style="margin-top:8px;"><strong>Trending:</strong> <span class="muted">Close losses, bounce-back potential</span></div>
+          <div style="margin-top:8px;"><strong>Game to remember:</strong> <span class="muted">5–0 win over Banditos</span></div>
+          <div style="margin-top:8px;"><strong>Latest result:</strong> <span class="muted">1–0 loss vs Owls</span></div>
+        </div>
+        <div class="tagrow">
+          <span class="tag">Canes</span>
+          <span class="tag">Advanced League</span>
+          <span class="tag">Rinkside Beat</span>
+          <span class="tag">Week 3</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Players to watch</h3>
+        <div class="mini">
+          <p style="margin:0 0 10px;"><strong>Andrew Sands</strong><br><span class="muted">Motor, shot, everywhere at once</span></p>
+          <p style="margin:0 0 10px;"><strong>Kenneth Lee (A)</strong><br><span class="muted">Elite IQ, monster snapshot, leader</span></p>
+          <p style="margin:0;"><strong>David Marples</strong><br><span class="muted">Blue-line driver, best hands in the league</span></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Next: what to track</h3>
+        <div class="mini">
+          <ul style="margin:0;padding-left:18px;">
+            <li>Can the top line convert early chances?</li>
+            <li>Does finishing normalize in one-goal games?</li>
+            <li>How the defense holds without Andrew Marples.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 Rinkside Report • A fan-made league beat page
+  </div>
+</body>
+</html>
