@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Week 3 Power Rankings: Early tiers emerge in the Advanced League</title>
+  <style>
+    :root{
+      --bg:#0b0c0f; --ink:#121212; --muted:#6b7280; --rule:#e6e6e6; --paper:#ffffff; --chip:#f3f4f6;
+      --shadow: 0 8px 28px rgba(16,24,40,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:#f6f7f9;line-height:1.55}
+    .topbar{background:var(--bg);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;gap:10px;align-items:baseline;font-weight:700;letter-spacing:.2px;white-space:nowrap}
+    .brand .dot{width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block}
+    .brand span{font-size:14px;opacity:.9} .brand strong{font-size:16px}
+    .nav{display:flex;gap:16px;font-size:13px;opacity:.88;white-space:nowrap;overflow:auto}
+    .nav a{color:#fff;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:26px 18px 60px;display:grid;grid-template-columns:1fr 300px;gap:28px}
+    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
+    .paper{background:var(--paper);border:1px solid #ededed;border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+    .article{padding:34px} @media(max-width:560px){.article{padding:22px 18px}}
+    .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center}
+    .pill{background:var(--chip);border:1px solid #e5e7eb;padding:3px 10px;border-radius:999px;font-weight:700;letter-spacing:.08em;color:#374151}
+    h1{margin:10px 0 10px;font-size:38px;line-height:1.12;letter-spacing:-.02em}
+    .subhead{font-size:18px;color:#374151;max-width:62ch;margin:0 0 18px}
+    .byline{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:16px 0 0;margin-bottom:18px;border-top:1px solid var(--rule)}
+    .author{font-weight:700;font-size:14px} .meta{font-size:13px;color:var(--muted)} .sep{opacity:.35}
+    .takeaways{background:#fbfbfc;border:1px solid #ececec;border-radius:12px;padding:14px 16px;margin:18px 0 22px}
+    .takeaways strong{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#374151;margin-bottom:8px}
+    .takeaways ul{margin:0;padding-left:18px;color:#111;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;font-size:14px;line-height:1.45}
+    .content{font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;font-size:18px;max-width:74ch}
+    .content p{margin:0 0 16px}
+    .content h2{
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;letter-spacing:.02em;margin:28px 0 10px;text-transform:uppercase;color:#111827
+    }
+    .rule{height:1px;background:var(--rule);margin:22px 0}
+    .rank{
+      border:1px solid #ededed;border-radius:12px;padding:14px 14px 12px;margin:14px 0;background:#fff;
+    }
+    .rank .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+    .rank .num{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;font-weight:900;font-size:18px}
+    .rank .team{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;font-weight:900;font-size:18px}
+    .rank .rec{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;font-size:13px;color:var(--muted);white-space:nowrap}
+    .rank .blurb{margin:10px 0 0;color:#111}
+    .rank .note{
+      margin-top:10px;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:13px;color:#374151;background:var(--chip);border:1px solid #e5e7eb;border-radius:10px;padding:10px 10px
+    }
+    .pull{
+      border-left:3px solid #111827;padding:6px 0 6px 14px;margin:20px 0 22px;
+      color:#111827;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;font-size:16px;line-height:1.45
+    }
+    .pull em{color:#374151;font-style:normal}
+    .side{position:sticky;top:14px;align-self:start} @media(max-width:980px){.side{position:static}}
+    .card{background:var(--paper);border:1px solid #ededed;border-radius:14px;padding:16px;box-shadow:0 8px 28px rgba(16,24,40,.05);margin-bottom:16px}
+    .card h3{margin:0 0 10px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#374151}
+    .mini{font-size:13px;color:#111;line-height:1.4} .muted{color:var(--muted)}
+    .footer{max-width:1080px;margin:0 auto;padding:10px 18px 40px;color:var(--muted);font-size:12px;text-align:center}
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Rinkside Report</strong>
+      <span>San Antonio Men’s Advanced League</span>
+    </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="#">Standings</a>
+      <a href="#">Power Rankings</a>
+      <a href="#">Recaps</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="paper">
+      <div class="article">
+        <div class="eyebrow">
+          <span class="pill">LEAGUE BEAT</span>
+          <span>Power Rankings</span>
+          <span>•</span>
+          <span>Week 3</span>
+        </div>
+
+        <h1>Week 3 Power Rankings: early tiers emerge in the Advanced League</h1>
+        <p class="subhead">
+          Three weeks in, the standings are starting to form into tiers — one clear front-runner, a crowded middle with
+          real volatility, and a bottom group that’s closer than the records suggest.
+        </p>
+
+        <div class="byline">
+          <div class="author">By Rinkside Staff</div>
+          <div class="meta"><span class="sep">•</span> Winter 2026</div>
+          <div class="meta"><span class="sep">•</span> 5 min read</div>
+        </div>
+
+        <div class="takeaways">
+          <strong>Key takeaways</strong>
+          <ul>
+            <li>Chanclas are the early standard: undefeated, structured, low drama.</li>
+            <li>The middle tier (Canes, Fridge Raiders, Pink Whitney) can beat anyone — and lose to anyone.</li>
+            <li>Owls and Banditos are closer than the results show, but details are costing them points.</li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <p>
+            Power rankings aren’t standings — they’re a temperature check. Through Week 3, one thing is clear:
+            the league isn’t separating into “good” and “bad.” It’s separating into <strong>consistent</strong> and
+            <strong>volatile</strong>.
+          </p>
+
+          <div class="pull">
+            “Three weeks in, the league’s identity is parity — but the teams that avoid chaos are already getting paid in points.”
+            <br><em>— Week 3 rinkside notes</em>
+          </div>
+
+          <h2>Power Rankings (Through Week 3 results)</h2>
+
+          <div class="rank">
+            <div class="top">
+              <div><span class="num">1.</span> <span class="team">Chanclas</span></div>
+              <div class="rec">Record: 3–0 (projected)</div>
+            </div>
+            <p class="blurb">
+              The early pace-setters. Wins over Owls (4–2), Banditos (2–0), and Pink Whitney (4–1) show a team that can win
+              different kinds of games without changing its personality. They defend, they manage the puck, and they don’t
+              donate odd-man rushes.
+            </p>
+            <div class="note"><strong>Trend:</strong> Quietly dominant. No wasted shifts.</div>
+          </div>
+
+          <div class="rank">
+            <div class="top">
+              <div><span class="num">2.</span> <span class="team">Canes</span></div>
+              <div class="rec">Record: 2–1 (projected)</div>
+            </div>
+            <p class="blurb">
+              The ceiling is obvious: a 5–0 shutout over the Banditos is the most complete performance we’ve seen from any team.
+              But the floor is real too (see: a 5–4 loss to the Fridge Raiders). When the Canes stay structured, they’re a
+              top-tier problem. When games get loose, they live in coin-flip territory.
+            </p>
+            <div class="note"><strong>Trend:</strong> High ceiling, thin margins. If finishing normalizes, they can chase #1.</div>
+          </div>
+
+          <div class="rank">
+            <div class="top">
+              <div><span class="num">3.</span> <span class="team">Fridge Raiders</span></div>
+              <div class="rec">Record: 2–1 (projected)</div>
+            </div>
+            <p class="blurb">
+              The league’s volatility kings. They outgun the Canes 5–4, then get outscored by Pink Whitney 6–3, then win a
+              1–0 grinder over the Owls. Their range of outcomes is the widest in the league — which makes them dangerous
+              and exhausting in equal measure.
+            </p>
+            <div class="note"><strong>Trend:</strong> They can play any style… but don’t always choose one.</div>
+          </div>
+
+          <div class="rank">
+            <div class="top">
+              <div><span class="num">4.</span> <span class="team">Pink Whitney</span></div>
+              <div class="rec">Record: 1–2 (projected)</div>
+            </div>
+            <p class="blurb">
+              If you’re looking for offense, this is the team. The 6–3 win over the Fridge Raiders shows the firepower is real.
+              The problem is the rest of the story: losses to Chanclas (4–1) and Canes (3–2) suggest they’re still searching for
+              the balance that wins tight games.
+            </p>
+            <div class="note"><strong>Trend:</strong> Scary with space. Still learning how to close.</div>
+          </div>
+
+          <div class="rank">
+            <div class="top">
+              <div><span class="num">5.</span> <span class="team">Banditos</span></div>
+              <div class="rec">Record: 1–2 (projected)</div>
+            </div>
+            <p class="blurb">
+              The Banditos have already shown both extremes: shut out twice (0–5 vs Canes, 0–2 vs Chanclas) and then a 5–4 win over
+              the Owls that proved they can score enough to win if the game opens up. The issue is consistency — defensively, shift-to-shift.
+            </p>
+            <div class="note"><strong>Trend:</strong> Capable of offense, but can’t afford the lapses.</div>
+          </div>
+
+          <div class="rank">
+            <div class="top">
+              <div><span class="num">6.</span> <span class="team">Owls</span></div>
+              <div class="rec">Record: 0–3 (projected)</div>
+            </div>
+            <p class="blurb">
+              The record is ugly. The games aren’t. A 5–4 loss to the Banditos and a 1–0 loss to the Fridge Raiders are the definition of
+              “one bounce away,” and even the 4–2 loss to Chanclas was competitive. But moral victories don’t move you up the table.
+            </p>
+            <div class="note"><strong>Trend:</strong> Better than the record — but running out of runway.</div>
+          </div>
+
+          <div class="rule"></div>
+
+          <h2>Game of the week</h2>
+          <p>
+            <strong>Fridge Raiders 5, Canes 4</strong> — the early-season measuring stick for “how chaotic can this league get?”
+            The Canes proved they can trade offense with anyone. The Raiders proved they can survive a track meet.
+          </p>
+
+          <h2>What to watch next</h2>
+          <p>
+            The league’s middle tier is where the season will be decided. If Chanclas are the standard, the real question is
+            which team can stay structured long enough to challenge them — and which teams will keep donating points in one-goal games.
+          </p>
+
+          <p style="margin-top:14px;font-size:14px;color:#6b7280;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;">
+            Note: records here are inferred from the Week 1–3 results provided (Chanclas 3–0; Canes 2–1; Fridge Raiders 2–1; Pink Whitney 1–2; Banditos 1–2; Owls 0–3).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="card">
+        <h3>Week 1–3 notable results</h3>
+        <div class="mini">
+          <ul style="margin:0;padding-left:18px;">
+            <li>Chanclas 4, Owls 2</li>
+            <li>Fridge Raiders 5, Canes 4</li>
+            <li>Canes 3, Pink Whitney 2</li>
+            <li>Chanclas 2, Banditos 0</li>
+            <li>Pink Whitney 6, Fridge Raiders 3</li>
+            <li>Canes 5, Banditos 0</li>
+            <li>Banditos 5, Owls 4</li>
+            <li>Fridge Raiders 1, Owls 0</li>
+            <li>Chanclas 4, Pink Whitney 1</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Tier check</h3>
+        <div class="mini">
+          <p style="margin:0 0 10px;"><strong>Tier 1:</strong> <span class="muted">Chanclas</span></p>
+          <p style="margin:0 0 10px;"><strong>Tier 2:</strong> <span class="muted">Canes, Fridge Raiders</span></p>
+          <p style="margin:0 0 10px;"><strong>Tier 2.5:</strong> <span class="muted">Pink Whitney</span></p>
+          <p style="margin:0;"><strong>Tier 3:</strong> <span class="muted">Banditos, Owls</span></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Next publish</h3>
+        <div class="mini">
+          <div><span class="muted">Week 4 standings column once the table updates.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Rinkside Report • Fan-made league beat page</div>
+</body>
+</html>
