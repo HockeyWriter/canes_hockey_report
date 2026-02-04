@@ -5,71 +5,293 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 4 Recap: Owls 1, Canes 0</title>
   <style>
-    :root{--bg:#0b0c0f;--ink:#121212;--muted:#6b7280;--rule:#e6e6e6;--paper:#fff;--chip:#f3f4f6;}
-    *{box-sizing:border-box} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:#f6f7f9;line-height:1.55}
-    .topbar{background:var(--bg);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:10px;align-items:baseline;font-weight:700}
-    .brand .dot{width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block}
-    .brand span{font-size:14px;opacity:.9} .brand strong{font-size:16px}
-    .wrap{max-width:1080px;margin:0 auto;padding:26px 18px 60px;display:grid;grid-template-columns:1fr 300px;gap:28px}
-    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
-    .paper{background:var(--paper);border:1px solid #ededed;border-radius:14px;box-shadow:0 8px 28px rgba(16,24,40,.06);overflow:hidden}
-    .article{padding:34px} @media(max-width:560px){.article{padding:22px 18px}}
-    .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center}
-    .pill{background:var(--chip);border:1px solid #e5e7eb;padding:3px 10px;border-radius:999px;font-weight:600;letter-spacing:.08em;color:#374151}
-    h1{margin:10px 0 10px;font-size:38px;line-height:1.12;letter-spacing:-.02em}
-    .subhead{font-size:18px;color:#374151;max-width:58ch;margin:0 0 18px}
-    .byline{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:16px 0 0;margin-bottom:18px;border-top:1px solid var(--rule)}
-    .author{font-weight:700;font-size:14px} .meta{font-size:13px;color:var(--muted)} .sep{opacity:.35}
-    .takeaways{background:#fbfbfc;border:1px solid #ececec;border-radius:12px;padding:14px 16px;margin:18px 0 22px}
-    .takeaways strong{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#374151;margin-bottom:8px}
-    .takeaways ul{margin:0;padding-left:18px;color:#111;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;font-size:14px;line-height:1.45}
-    .content{font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;font-size:18px;max-width:72ch}
+    :root{
+      --bg:#0b0c0f; --ink:#121212; --muted:#6b7280; --rule:#e6e6e6;
+      --paper:#ffffff; --chip:#f3f4f6; --shadow:0 8px 28px rgba(16,24,40,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--ink);
+      background:#f6f7f9;
+      line-height:1.55
+    }
+    .topbar{
+      background:var(--bg);
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center
+    }
+    .brand{
+      display:flex;
+      gap:10px;
+      align-items:baseline;
+      font-weight:700
+    }
+    .brand .dot{
+      width:10px;
+      height:10px;
+      border-radius:2px;
+      background:#fff;
+      display:inline-block
+    }
+    .brand span{font-size:14px;opacity:.9}
+    .brand strong{font-size:16px}
+
+    .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      padding:26px 18px 60px;
+      display:grid;
+      grid-template-columns:1fr 300px;
+      gap:28px
+    }
+    @media(max-width:980px){
+      .wrap{grid-template-columns:1fr}
+    }
+
+    .paper{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      overflow:hidden
+    }
+    .article{
+      padding:34px
+    }
+    @media(max-width:560px){
+      .article{padding:22px 18px}
+    }
+
+    .eyebrow{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:flex;
+      gap:10px;
+      align-items:center
+    }
+    .pill{
+      background:var(--chip);
+      border:1px solid #e5e7eb;
+      padding:3px 10px;
+      border-radius:999px;
+      font-weight:700;
+      color:#374151
+    }
+
+    h1{
+      margin:10px 0 10px;
+      font-size:38px;
+      line-height:1.12
+    }
+    .subhead{
+      font-size:18px;
+      color:#374151;
+      max-width:62ch;
+      margin:0 0 18px
+    }
+
+    .byline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+      padding:16px 0 0;
+      margin-bottom:18px;
+      border-top:1px solid var(--rule)
+    }
+    .author{font-weight:700;font-size:14px}
+    .meta{font-size:13px;color:var(--muted)}
+    .sep{opacity:.35}
+
+    .takeaways{
+      background:#fbfbfc;
+      border:1px solid #ececec;
+      border-radius:12px;
+      padding:14px 16px;
+      margin:18px 0 22px
+    }
+    .takeaways strong{
+      display:block;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#374151;
+      margin-bottom:8px
+    }
+    .takeaways ul{
+      margin:0;
+      padding-left:18px;
+      font-size:14px
+    }
+
+    .content{
+      font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+      font-size:18px;
+      max-width:72ch
+    }
     .content p{margin:0 0 16px}
-    .rule{height:1px;background:var(--rule);margin:22px 0}
-    .side{position:sticky;top:14px;align-self:start} @media(max-width:980px){.side{position:static}}
-    .card{background:var(--paper);border:1px solid #ededed;border-radius:14px;padding:16px;box-shadow:0 8px 28px rgba(16,24,40,.05);margin-bottom:16px}
-    .card h3{margin:0 0 10px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#374151}
-    .mini{font-size:13px;color:#111;line-height:1.4} .muted{color:var(--muted)}
-    .footer{max-width:1080px;margin:0 auto;padding:10px 18px 40px;color:var(--muted);font-size:12px;text-align:center}
+    .content h2{
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;
+      letter-spacing:.02em;
+      margin:28px 0 10px;
+      text-transform:uppercase;
+      color:#111827
+    }
+
+    .pull{
+      border-left:3px solid #111827;
+      padding:6px 0 6px 14px;
+      margin:20px 0 22px;
+      color:#111827;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;
+      line-height:1.45
+    }
+    .pull em{color:#374151;font-style:normal}
+
+    .side{
+      position:sticky;
+      top:14px;
+      align-self:start
+    }
+    .card{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 8px 28px rgba(16,24,40,.05);
+      margin-bottom:16px
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#374151
+    }
+    .mini{font-size:13px;line-height:1.4}
+    .muted{color:var(--muted)}
+
+    .footer{
+      max-width:1080px;
+      margin:0 auto;
+      padding:10px 18px 40px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center
+    }
   </style>
 </head>
+
 <body>
   <div class="topbar">
-    <div class="brand"><span class="dot"></span><strong>Rinkside Report</strong><span>San Antonio Men’s Advanced League</span></div>
-    <div style="opacity:.85;font-size:13px;white-space:nowrap;">Canes • Recaps</div>
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Rinkside Report</strong>
+      <span>San Antonio Men’s Advanced League</span>
+    </div>
   </div>
 
   <div class="wrap">
     <div class="paper">
       <div class="article">
-        <div class="eyebrow"><span class="pill">GAME RECAP</span><span>Week 4</span><span>•</span><span>Canes</span></div>
-        <h1>Canes get goalied in 1–0 loss to Owls</h1>
-        <p class="subhead">It was one of those nights: a tight game, clean effort, and no reward — the Canes couldn’t find a finish in a low-event loss.</p>
+        <div class="eyebrow">
+          <span class="pill">GAME RECAP</span>
+          <span>Week 4</span>
+          <span>•</span>
+          <span>Canes</span>
+        </div>
+
+        <h1>Canes do everything but score in 1–0 loss to Owls</h1>
+        <p class="subhead">
+          Despite sustained pressure, clean entries, and multiple Grade-A looks, the Canes couldn’t break through in a one-goal grinder.
+        </p>
 
         <div class="byline">
           <div class="author">By Rinkside Staff</div>
-          <div class="meta"><span class="sep">•</span> Week 4</div>
-          <div class="meta"><span class="sep">•</span> 3 min read</div>
+          <div class="meta"><span class="sep">•</span> Feb 2, 2026</div>
+          <div class="meta"><span class="sep">•</span> 4 min read</div>
         </div>
 
         <div class="takeaways">
           <strong>Key takeaways</strong>
           <ul>
-            <li>The Canes controlled long stretches but couldn’t break through offensively.</li>
-            <li>In one-goal games, the margin becomes finishing — not effort.</li>
-            <li>This loss is a reminder: close games don’t care about deserve.</li>
+            <li>David Marbles drove offense from the back end with repeated coast-to-coast carries.</li>
+            <li>The Canes generated sustained pressure but ran into a locked-in Owls goalie.</li>
+            <li>An early unlucky bounce was the only thing that separated the teams.</li>
           </ul>
         </div>
 
         <div class="content">
-          <p>The Canes dropped a frustrating one in Week 4, falling <strong>1–0</strong> to the Owls in a game that never opened up — and never gave them much margin to recover.</p>
-          <p>It wasn’t an ugly performance. The Canes generated pressure, won enough puck battles to spend time in the right end, and pushed late. But the finishing touch never arrived, and one moment against became the entire story.</p>
+          <p>
+            The Canes’ Week 4 matchup against the Owls was decided almost as soon as it began — not by structure, not by dominance,
+            but by an awkward bounce that slipped past <strong>Michael Brown</strong> just two minutes in.
+          </p>
 
-          <div class="rule"></div>
+          <p>
+            From that point on, the ice tilted heavily in one direction. The Canes controlled possession, entered the zone with speed,
+            and forced the Owls to defend for long stretches. The scoreboard, however, never moved.
+          </p>
 
-          <p>In games like this, every shift feels like it matters twice: once because chances are rare, and again because the scoreboard doesn’t offer a way out. The Canes will take positives from the process — but they’ll also recognize the recurring theme that follows them early: <strong>they’re close, but they need goals.</strong></p>
-          <p>The good news? These are fixable problems. The bad news? The standings don’t grade on effort.</p>
+          <div class="pull">
+            “This wasn’t a game where the Canes were chasing — it was a game where they kept knocking and the door never opened.”
+            <br><em>— Rinkside notes, Week 4</em>
+          </div>
+
+          <h2>Short bench, strong response</h2>
+          <p>
+            The Canes were already thin heading into the night. Defenseman <strong>Garrett Harry</strong> and winger
+            <strong>Jason Powers</strong> were out with injuries, while <strong>David Marples</strong> remains sidelined
+            with a broken toe and is expected to miss another four to six weeks.
+          </p>
+
+          <p>
+            The forward group featured <strong>Ryan Alvarado</strong> at center on the top line with captain
+            <strong>Jeffrey Golsch</strong> on the left and <strong>Ryan Kowal</strong> on the right. The second unit
+            saw <strong>Thomas Pucci</strong> in the middle, flanked by <strong>Jackson Brown</strong> and
+            <strong>Andrew Sands</strong> on the wing.
+          </p>
+
+          <h2>Marbles tilts the ice</h2>
+          <p>
+            If there was one player who looked capable of breaking the game open, it was <strong>David Marbles</strong>.
+            Time and again, he carried the puck coast-to-coast, slicing through neutral-zone coverage and getting shots
+            on goal from dangerous areas.
+          </p>
+
+          <p>
+            Marbles wasn’t just moving the puck — he was creating offense by himself. Each rush forced the Owls to reset,
+            and each shot added to the growing sense that the Canes were one bounce away from leveling the game.
+          </p>
+
+          <h2>Sands drives the forecheck</h2>
+          <p>
+            Up front, <strong>Andrew Sands</strong> was buzzing all night. He won races, pressured defenders, and created
+            multiple high-quality chances off the cycle. The Canes weren’t settling for perimeter looks; they were
+            generating legitimate offense.
+          </p>
+
+          <p>
+            The problem wasn’t chance quality. It was the man in the crease.
+          </p>
+
+          <h2>What it means</h2>
+          <p>
+            Nights like this tend to linger. The Canes did enough to win, controlled the game for long stretches, and
+            still came away with nothing. In a league defined by thin margins, <strong>one early bounce erased forty minutes of work</strong>.
+          </p>
+
+          <p>
+            The process was strong. The result wasn’t. And the standings don’t care which one you liked better.
+          </p>
         </div>
       </div>
     </div>
@@ -79,9 +301,21 @@
         <h3>Final score</h3>
         <div class="mini"><strong>Owls 1</strong><br><span class="muted">Canes 0</span></div>
       </div>
+
       <div class="card">
-        <h3>Theme</h3>
-        <div class="mini"><span class="muted">Process was fine. Finish wasn’t there.</span></div>
+        <h3>Notable absences</h3>
+        <div class="mini muted">
+          Garrett Harry (injury)<br>
+          Jason Powers (injury)<br>
+          David Marples (broken toe)
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Game theme</h3>
+        <div class="mini muted">
+          Process without payoff
+        </div>
       </div>
     </div>
   </div>
