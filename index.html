@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Where the Canes Stand After Week 3: Better Than the Record</title>
+  <title>Rinkside Report — San Antonio Men’s Advanced League</title>
   <style>
     :root{
       --bg:#0b0c0f;
@@ -11,17 +11,18 @@
       --muted:#6b7280;
       --rule:#e6e6e6;
       --paper:#ffffff;
-      --accent:#111827;
       --chip:#f3f4f6;
+      --shadow: 0 8px 28px rgba(16,24,40,.06);
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--ink);
       background:#f6f7f9;
       line-height:1.55;
     }
+
     /* Top nav */
     .topbar{
       background:var(--bg);
@@ -30,6 +31,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
+      gap:12px;
     }
     .brand{
       display:flex;
@@ -37,6 +39,7 @@
       align-items:baseline;
       font-weight:700;
       letter-spacing:.2px;
+      white-space:nowrap;
     }
     .brand .dot{
       width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block
@@ -47,175 +50,52 @@
       display:flex;
       gap:16px;
       font-size:13px;
-      opacity:.85;
+      opacity:.88;
       white-space:nowrap;
+      overflow:auto;
     }
     .nav a{color:#fff;text-decoration:none}
-    .nav a:hover{opacity:.75}
+    .nav a:hover{opacity:.8}
 
     /* Layout */
     .wrap{
       max-width: 1080px;
       margin: 0 auto;
-      padding: 26px 18px 60px;
+      padding: 22px 18px 60px;
       display:grid;
-      grid-template-columns: 1fr 300px;
-      gap: 28px;
+      grid-template-columns: 1fr 330px;
+      gap: 22px;
     }
     @media (max-width: 980px){
-      .wrap{grid-template-columns: 1fr}
-    }
-    .paper{
-      background:var(--paper);
-      border:1px solid #ededed;
-      border-radius:14px;
-      box-shadow: 0 8px 28px rgba(16,24,40,.06);
-      overflow:hidden;
-    }
-    .article{
-      padding: 34px 34px 26px;
-    }
-    @media (max-width: 560px){
-      .article{padding: 22px 18px}
+      .wrap{grid-template-columns:1fr}
     }
 
-    /* Eyebrow + title */
-    .eyebrow{
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--muted);
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-    .eyebrow .pill{
-      background:var(--chip);
-      border:1px solid #e5e7eb;
-      padding:3px 10px;
-      border-radius:999px;
-      font-weight:600;
-      letter-spacing:.08em;
-      color:#374151;
-    }
-    h1{
-      margin:10px 0 10px;
-      font-size: 38px;
-      line-height:1.12;
-      letter-spacing:-.02em;
-    }
-    .subhead{
-      font-size:18px;
-      color:#374151;
-      max-width: 58ch;
-      margin: 0 0 18px;
-    }
-
-    /* Byline row */
-    .byline{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      align-items:center;
-      padding: 16px 0 0;
-      margin-bottom: 18px;
-      border-top:1px solid var(--rule);
-    }
-    .byline .author{
-      font-weight:700;
-      font-size:14px;
-    }
-    .byline .meta{
-      font-size:13px;
-      color:var(--muted);
-    }
-    .byline .sep{opacity:.35}
-
-    /* Body */
-    .content{
-      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-      font-size: 18px;
-      color:#111;
-      max-width: 72ch;
-    }
-    .content p{margin: 0 0 16px}
-    .content h2{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:16px;
-      letter-spacing:.02em;
-      margin: 28px 0 10px;
-      text-transform:uppercase;
-      color:#111827;
-    }
-    .rule{height:1px;background:var(--rule);margin: 22px 0}
-
-    /* Callouts */
-    .takeaways{
-      background:#fbfbfc;
-      border:1px solid #ececec;
-      border-radius:12px;
-      padding:14px 16px;
-      margin: 18px 0 22px;
-    }
-    .takeaways strong{
-      display:block;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#374151;
-      margin-bottom:8px;
-    }
-    .takeaways ul{
-      margin:0;
-      padding-left:18px;
-      color:#111;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:14px;
-      line-height:1.45;
-    }
-    .pull{
-      border-left:3px solid #111827;
-      padding: 6px 0 6px 14px;
-      margin: 20px 0 22px;
-      color:#111827;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      font-size:16px;
-      line-height:1.45;
-    }
-    .pull em{color:#374151;font-style:normal}
-
-    /* Sidebar */
-    .side{
-      position:sticky;
-      top:14px;
-      align-self:start;
-    }
-    @media (max-width: 980px){
-      .side{position:static}
-    }
+    /* Cards */
     .card{
       background:var(--paper);
       border:1px solid #ededed;
       border-radius:14px;
-      padding:16px;
-      box-shadow: 0 8px 28px rgba(16,24,40,.05);
-      margin-bottom:16px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
-    .card h3{
-      margin:0 0 10px;
+    .pad{padding:18px}
+    .section-title{
+      margin:0 0 12px;
       font-size:13px;
       letter-spacing:.12em;
       text-transform:uppercase;
       color:#374151;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
     }
-    .mini{
-      font-size:13px;
-      color:#111;
-      line-height:1.4;
-    }
-    .mini .muted{color:var(--muted)}
-    .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .tag{
+    .section-title .muted{color:var(--muted);font-weight:500;letter-spacing:.08em;text-transform:none}
+
+    /* Pills */
+    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .pill{
+      display:inline-block;
       font-size:12px;
       padding:6px 10px;
       border-radius:999px;
@@ -224,6 +104,142 @@
       color:#111827;
       white-space:nowrap;
     }
+
+    /* Hero */
+    .hero{
+      padding: 22px 22px 18px;
+    }
+    .eyebrow{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+    .eyebrow .tag{
+      background:var(--chip);
+      border:1px solid #e5e7eb;
+      padding:3px 10px;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.08em;
+      color:#374151;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+    .hero p{
+      margin:0 0 14px;
+      color:#374151;
+      font-size:16px;
+      max-width: 70ch;
+    }
+    .meta{
+      font-size:13px;
+      color:var(--muted);
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .meta .sep{opacity:.35}
+
+    .cta{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      background:#111827;
+      color:white;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+    }
+    .btn:hover{opacity:.9}
+    .btn.secondary{
+      background:white;
+      color:#111827;
+      border:1px solid #e5e7eb;
+    }
+
+    /* List */
+    .list{
+      display:flex;
+      flex-direction:column;
+      gap:0;
+    }
+    .row{
+      padding:14px 18px;
+      border-top:1px solid var(--rule);
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      justify-content:space-between;
+    }
+    .row:first-child{border-top:none}
+    .row a{
+      text-decoration:none;
+      color:inherit;
+      flex:1;
+    }
+    .kicker{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .headline{
+      font-size:16px;
+      font-weight:800;
+      line-height:1.25;
+      margin:0 0 6px;
+    }
+    .dek{
+      margin:0;
+      color:#374151;
+      font-size:13px;
+      line-height:1.35;
+      max-width: 70ch;
+    }
+    .rightmeta{
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+      padding-top:18px;
+    }
+
+    /* Sidebar cards */
+    .side{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .mini{
+      font-size:13px;
+      color:#111;
+      line-height:1.4;
+    }
+    .mini .muted{color:var(--muted)}
+    .ul{
+      margin:8px 0 0;
+      padding-left:18px;
+      font-size:13px;
+      color:#111;
+    }
+    .ul li{margin:6px 0}
 
     /* Footer */
     .footer{
@@ -236,6 +252,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="topbar">
     <div class="brand">
@@ -245,120 +262,128 @@
     </div>
     <div class="nav">
       <a href="#">Canes</a>
+      <a href="#">Recaps</a>
       <a href="#">Standings</a>
-      <a href="#">Schedule</a>
       <a href="#">Power Rankings</a>
+      <a href="#">Features</a>
     </div>
   </div>
 
   <div class="wrap">
-    <!-- Article -->
-    <div class="paper">
-      <div class="article">
+    <!-- MAIN COLUMN -->
+    <div class="card">
+      <div class="hero">
         <div class="eyebrow">
-          <span class="pill">LEAGUE BEAT</span>
-          <span>Canes</span>
+          <span class="tag">Latest</span>
+          <span>GAME RECAP</span>
           <span>•</span>
-          <span>Week 3</span>
+          <span>Week 4</span>
         </div>
 
-        <h1>Where the Canes stand after Week 3: Better than the record</h1>
-        <p class="subhead">
-          The Canes are working their way into the top half of the table, but the real story is how close the margins have been — and why a 1–0 loss can be both warning sign and reassurance.
+        <h1>Canes get goalied in 1–0 loss to Owls</h1>
+        <p>
+          A low-event game decided by a single moment. The Canes carried play for long stretches but couldn’t find a finish
+          in a one-goal loss that keeps the early-season theme intact: tight margins, no free points.
         </p>
 
-        <div class="byline">
-          <div class="author">By Rinkside Staff</div>
-          <div class="meta"><span class="sep">•</span> Updated Feb 2026</div>
-          <div class="meta"><span class="sep">•</span> 4 min read</div>
+        <div class="meta">
+          <span>By Rinkside Staff</span>
+          <span class="sep">•</span>
+          <span>3 min read</span>
+          <span class="sep">•</span>
+          <span>Week 4</span>
         </div>
 
-        <div class="takeaways">
-          <strong>Key takeaways</strong>
-          <ul>
-            <li>The Canes are competitive every night, backed by steady goaltending and elite effort.</li>
-            <li>They’re generating chances — but finishing remains the difference in one-goal games.</li>
-            <li>David Marples and Andrew Sands continue to drive play; Kenneth Lee is the quiet stabilizer.</li>
-          </ul>
+        <div class="cta">
+          <a class="btn" href="week-4-recap-owls.html">Read the recap</a>
+          <a class="btn secondary" href="week-3-recap-banditos.html">Previous: 5–0 win</a>
         </div>
 
-        <div class="content">
-          <p>
-            Three weeks into the season, the Canes sit in the upper half of the table, but the numbers don’t quite capture the story unfolding on the ice.
-            This is a team that looks organized, skates well, and rarely gets outworked — and yet it’s also a team living on the thin edge where one bounce becomes a headline.
-          </p>
+        <div class="pillrow">
+          <span class="pill">Canes</span>
+          <span class="pill">Week 4</span>
+          <span class="pill">Recap</span>
+          <span class="pill">Goalie Duel</span>
+        </div>
+      </div>
 
-          <p>
-            Monday’s <strong>1–0 loss to the Owls</strong>, a result not yet reflected in the standings, felt like a microcosm of the early season: long stretches of pressure, quality looks created,
-            and a game that stayed within reach all night — until it didn’t.
-          </p>
+      <div class="list">
+        <div class="section-title pad" style="border-top:1px solid var(--rule); margin:0;">
+          <span>Recent stories</span>
+          <span class="muted">Canes beat</span>
+        </div>
 
-          <div class="pull">
-            “The Canes are close. The question is whether they can turn close into points before the table tightens.”
-            <br><em>— League beat notes, Week 3</em>
-          </div>
+        <div class="row">
+          <a href="week-4-recap-owls.html">
+            <div class="kicker">Game Recap • Week 4</div>
+            <div class="headline">Owls 1, Canes 0: the Canes create chances but come up empty</div>
+            <p class="dek">A night where effort wasn’t the issue — finishing was.</p>
+          </a>
+          <div class="rightmeta">3 min</div>
+        </div>
 
-          <h2>The standings say one thing — the games say another</h2>
-          <p>
-            The Canes have shown they can score in bunches, but they’ve also proven vulnerable to low-event games where execution matters more than volume.
-            Against the Owls, they generated pressure and pushed late, but the finishing touch never arrived.
-          </p>
+        <div class="row">
+          <a href="week-3-recap-banditos.html">
+            <div class="kicker">Game Recap • Week 3</div>
+            <div class="headline">Statement night: Canes blank Banditos 5–0</div>
+            <p class="dek">The Canes’ most complete performance: structure, pressure, and a shutout.</p>
+          </a>
+          <div class="rightmeta">3 min</div>
+        </div>
 
-          <p>
-            That’s not a structural problem — it’s a conversion problem. The process is there. The results have been streaky.
-            In a league where most games are decided by one or two goals, that margin isn’t a detail; it’s the season.
-          </p>
+        <div class="row">
+          <a href="week-2-recap-pink-whitney.html">
+            <div class="kicker">Game Recap • Week 2</div>
+            <div class="headline">Canes grind out a 3–2 win over Pink Whitney</div>
+            <p class="dek">A tighter, more disciplined response after the opener.</p>
+          </a>
+          <div class="rightmeta">3 min</div>
+        </div>
 
-          <div class="rule"></div>
+        <div class="row">
+          <a href="week-1-recap-fridge-raiders.html">
+            <div class="kicker">Game Recap • Week 1</div>
+            <div class="headline">Canes drop opener in track meet: Fridge Raiders 5, Canes 4</div>
+            <p class="dek">Four goals weren’t enough in a high-event start to the season.</p>
+          </a>
+          <div class="rightmeta">3 min</div>
+        </div>
 
-          <h2>Why the Canes are still a factor</h2>
-          <p>
-            Start with the foundation. <strong>Michael Brown</strong> continues to keep games tight, giving the Canes a chance even on nights when offense is hard to come by.
-            <strong>Andrew Sands</strong> remains the engine — skating hard, getting pucks back, and forcing sequences to happen.
-            <strong>Kenneth Lee</strong> quietly controls the tempo with smart reads and tape-to-tape touches.
-          </p>
+        <div class="section-title pad" style="border-top:1px solid var(--rule); margin:0;">
+          <span>Coming soon</span>
+          <span class="muted">template slot</span>
+        </div>
 
-          <p>
-            And then there’s the blue line: <strong>David Marples</strong> is still the best puck handler on the ice in most matchups, driving offense from the back end in ways few teams can replicate.
-            When the Canes look dangerous, he’s often at the center of it.
-          </p>
-
-          <div class="rule"></div>
-
-          <h2>What’s holding them back</h2>
-          <p>
-            The early-season concern is simple: <strong>finishing</strong>. The Canes are creating chances — off forechecks, off entries, off point shots — but they haven’t consistently cashed them in.
-            That puts pressure on every defensive mistake, because the margin for error disappears when one goal has to feel like three.
-          </p>
-
-          <p>
-            The good news is this isn’t about effort. It’s about timing. If a couple of the grinders get one to drop, the narrative flips quickly.
-            For now, the Canes remain exactly what they look like on the ice: <strong>a hard-working team that’s closer than the standings suggest — and dangerous if the offense wakes up.</strong>
-          </p>
+        <div class="row">
+          <a href="#">
+            <div class="kicker">League Beat • Week 4</div>
+            <div class="headline">Where the Canes stand after Week 4</div>
+            <p class="dek">Standings update + league storylines will be published once the table updates.</p>
+          </a>
+          <div class="rightmeta">—</div>
         </div>
       </div>
     </div>
 
-    <!-- Sidebar -->
+    <!-- SIDEBAR -->
     <div class="side">
-      <div class="card">
-        <h3>Team snapshot</h3>
+      <div class="card pad">
+        <div class="section-title"><span>Team snapshot</span></div>
         <div class="mini">
           <div><strong>Identity:</strong> <span class="muted">Hard-working, tight games, strong goaltending, inconsistent finishing</span></div>
-          <div style="margin-top:8px;"><strong>Trending:</strong> <span class="muted">Close losses, bounce-back potential</span></div>
-          <div style="margin-top:8px;"><strong>Game to remember:</strong> <span class="muted">5–0 win over Banditos</span></div>
-          <div style="margin-top:8px;"><strong>Latest result:</strong> <span class="muted">1–0 loss vs Owls</span></div>
+          <div style="margin-top:8px;"><strong>Season theme:</strong> <span class="muted">Margins decide everything</span></div>
+          <div style="margin-top:8px;"><strong>Best result:</strong> <span class="muted">5–0 vs Banditos (Week 3)</span></div>
+          <div style="margin-top:8px;"><strong>Latest:</strong> <span class="muted">1–0 loss vs Owls (Week 4)</span></div>
         </div>
-        <div class="tagrow">
-          <span class="tag">Canes</span>
-          <span class="tag">Advanced League</span>
-          <span class="tag">Rinkside Beat</span>
-          <span class="tag">Week 3</span>
+        <div class="pillrow">
+          <span class="pill">Canes</span>
+          <span class="pill">Advanced League</span>
+          <span class="pill">Recaps</span>
         </div>
       </div>
 
-      <div class="card">
-        <h3>Players to watch</h3>
+      <div class="card pad">
+        <div class="section-title"><span>Players to watch</span></div>
         <div class="mini">
           <p style="margin:0 0 10px;"><strong>Andrew Sands</strong><br><span class="muted">Motor, shot, everywhere at once</span></p>
           <p style="margin:0 0 10px;"><strong>Kenneth Lee (A)</strong><br><span class="muted">Elite IQ, monster snapshot, leader</span></p>
@@ -366,21 +391,19 @@
         </div>
       </div>
 
-      <div class="card">
-        <h3>Next: what to track</h3>
+      <div class="card pad">
+        <div class="section-title"><span>Next steps</span></div>
         <div class="mini">
-          <ul style="margin:0;padding-left:18px;">
-            <li>Can the top line convert early chances?</li>
-            <li>Does finishing normalize in one-goal games?</li>
-            <li>How the defense holds without Andrew Marples.</li>
+          <ul class="ul">
+            <li>Publish weekly standings column when the table updates.</li>
+            <li>Add a “Features” page for player spotlights.</li>
+            <li>Optional: add a “Power Rankings” page.</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="footer">
-    © 2026 Rinkside Report • A fan-made league beat page
-  </div>
+  <div class="footer">© 2026 Rinkside Report • Fan-made league beat page</div>
 </body>
 </html>
