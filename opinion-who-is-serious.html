@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opinion: At some point, the league has to decide who’s serious</title>
+  <style>
+    :root{
+      --bg:#0b0c0f; --ink:#121212; --muted:#6b7280; --rule:#e6e6e6;
+      --paper:#ffffff; --chip:#f3f4f6; --shadow:0 8px 28px rgba(16,24,40,.06);
+      --op:#991b1b; --opbg:#fee2e2; --opborder:#fecaca;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:#f6f7f9;
+      color:var(--ink);
+      line-height:1.55;
+    }
+    .topbar{
+      background:var(--bg);
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;gap:10px;align-items:baseline;font-weight:700;letter-spacing:.2px;white-space:nowrap;
+    }
+    .brand .dot{width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block}
+    .brand span{font-size:14px;opacity:.9}
+    .brand strong{font-size:16px}
+    .nav{display:flex;gap:16px;font-size:13px;opacity:.88;white-space:nowrap;overflow:auto}
+    .nav a{color:#fff;text-decoration:none}
+    .nav a:hover{opacity:.8}
+
+    .wrap{max-width:920px;margin:0 auto;padding:26px 18px 60px}
+    .paper{background:var(--paper);border:1px solid #ededed;border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+    .article{padding:34px}
+    @media(max-width:560px){.article{padding:22px 18px}}
+
+    .eyebrow{
+      font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--op);
+      display:flex;gap:10px;align-items:center;margin-bottom:10px
+    }
+    .pill{
+      background:var(--opbg);
+      border:1px solid var(--opborder);
+      padding:3px 10px;border-radius:999px;font-weight:900;color:var(--op);
+    }
+
+    h1{
+      margin:10px 0 12px;
+      font-size:40px;
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+    .subhead{
+      font-size:18px;
+      color:#374151;
+      max-width:74ch;
+      margin:0 0 18px;
+    }
+    .byline{
+      display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+      padding:16px 0 0;margin:18px 0 22px;border-top:1px solid var(--rule);
+      font-size:13px;color:var(--muted);
+    }
+    .byline strong{color:#111827}
+    .sep{opacity:.35}
+
+    figure{margin:22px 0;}
+    figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+
+    .content{
+      font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+      font-size:19px;
+      max-width:76ch;
+    }
+    .content p{margin:0 0 20px}
+    .content h2{
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;letter-spacing:.08em;text-transform:uppercase;
+      margin:34px 0 12px;color:#111827;
+    }
+
+    .pull{
+      border-left:4px solid var(--op);
+      padding:8px 0 8px 16px;
+      margin:26px 0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:17px;
+      color:#111827;
+    }
+    .pull em{color:#374151;font-style:normal}
+
+    .footer{
+      max-width:920px;margin:0 auto;padding:10px 18px 40px;
+      color:var(--muted);font-size:12px;text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Rinkside Report</strong>
+      <span>Opinion</span>
+    </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="paper">
+      <div class="article">
+        <div class="eyebrow">
+          <span class="pill">Opinion</span>
+          <span>League</span>
+        </div>
+
+        <h1>At some point, the league has to decide who’s serious</h1>
+        <p class="subhead">
+          Four weeks into a 12-week season, proximity in the standings is starting to hide a more important truth: not everyone is trending in the same direction.
+        </p>
+
+        <!-- HERO IMAGE -->
+        <figure>
+          <img
+            src="images/opinion/opinion-clock-is-ticking.png"
+            alt="A tense locker-room moment with Canes jerseys in the background"
+            style="width:100%; border-radius:12px;"
+          />
+          <figcaption>
+            In a short season with a Week 8 trade deadline, uncertainty doesn’t stay quiet for long.
+          </figcaption>
+        </figure>
+
+        <div class="byline">
+          <div>By <strong>Mark Ellison</strong>, Columnist</div>
+          <div class="sep">•</div>
+          <div>Friday Edition</div>
+          <div class="sep">•</div>
+          <div>Opinion</div>
+        </div>
+
+        <div class="content">
+          <p>
+            Four weeks into a 12-week season, the league is still close enough for excuses to sound reasonable. That’s the danger.
+            Because proximity in the standings doesn’t mean proximity in direction. Some teams know exactly who they are.
+            Others are still telling themselves stories — about process, about effort, about patience — that won’t survive the calendar.
+          </p>
+
+          <div class="pull">
+            “It’s early” is something teams say right before it isn’t.
+          </div>
+
+          <h2>The Canes: effort isn’t the conversation anymore</h2>
+          <p>
+            Let’s start with the team everyone agrees “looks fine.” The Canes skate. They forecheck. They generate pressure.
+            No one around the league questions their effort. But four weeks in, effort is no longer the differentiator — outcomes are.
+          </p>
+          <p>
+            The imbalance is becoming hard to ignore. A defenseman is leading the internal scoring picture. Forwards are working without reward.
+            Leadership messages are still positive, but positivity has a shelf life in a short season.
+            At some point, the question shifts from “are we playing the right way?” to “who is actually going to decide games?”
+          </p>
+          <p>
+            That moment is closer than the Canes want to admit.
+          </p>
+
+          <h2>Pink Whitney: swagger meets accountability</h2>
+          <p>
+            Pink Whitney doesn’t lack belief. If anything, belief has never been the problem. They score, they attack, they trust their skill.
+            But the league is starting to notice something else too: when games tighten, the same risks keep appearing — and the same explanations follow afterward.
+          </p>
+          <p>
+            Defense wants support. Coaches want restraint. Forwards want freedom.
+            You can win games that way. You can even win weeks. But in a 12-week season, unresolved accountability doesn’t stay quiet for long.
+            Week 5 isn’t about how many they can score — it’s about whether they can win without needing seven.
+          </p>
+
+          <h2>Banditos: when emotion stops being an asset</h2>
+          <p>
+            There’s a difference between passion and volatility. The Banditos have spent the first month walking that line.
+            The effort is there. The emotion is real. But so are the rushed decisions and the moments where structure evaporates under pressure.
+          </p>
+          <p>
+            Around the league, there’s growing curiosity — not about the roster, but about the bench.
+            Line juggling and shortened hooks can be adjustments. Or they can be symptoms. In a longer season, turbulence can settle.
+            In this one, it tends to compound.
+          </p>
+
+          <h2>Owls: patience or paralysis</h2>
+          <p>
+            No team has leaned harder on the phrase “we’re close” than the Owls — and to be fair, they’re not wrong.
+            They defend, they stay connected, they grind games down. But structure without scoring eventually turns into frustration,
+            especially when you’re asking players to keep believing without giving them relief.
+          </p>
+          <p>
+            Management’s patience has been admirable so far. The question is whether it’s also risky.
+            At some point, believing in the plan has to be matched with a plan to change the outcome.
+          </p>
+
+          <h2>Chanclas: the uncomfortable mirror</h2>
+          <p>
+            While everyone else debates identity, the Chanclas just keep collecting points.
+            They don’t dominate loudly. They don’t chase highlight moments. They don’t apologize for winning games other teams call boring.
+          </p>
+          <p>
+            And that’s what makes them uncomfortable — because they aren’t just winning games.
+            They’re forcing the rest of the league to confront itself.
+          </p>
+
+          <div class="pull">
+            <em>The worst place to be isn’t last. It’s undecided.</em>
+          </div>
+
+          <h2>The Week 8 reality</h2>
+          <p>
+            The trade deadline is looming at Week 8. Not because deals are imminent — but because decisions are.
+            Not trades. Not call-ups. Belief decisions.
+          </p>
+          <p>
+            Who still thinks this group can do it? Who knows something has to change? And who’s waiting one week too long to admit it?
+            In a league this tight, the teams that act late don’t just lose ground — they lose options.
+          </p>
+
+          <p>
+            Week 5 won’t decide the season. But it will reveal who’s acting like this season is short — because it is.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">© 2026 Rinkside Report</div>
+  </div>
+</body>
+</html>
