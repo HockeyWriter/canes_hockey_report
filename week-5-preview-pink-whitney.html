@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Week 5 Canes Preview: Lines reshuffled, answers required vs Pink Whitney</title>
+  <style>
+    :root{
+      --bg:#0b0c0f; --ink:#121212; --muted:#6b7280; --rule:#e6e6e6;
+      --paper:#ffffff; --chip:#f3f4f6; --shadow:0 8px 28px rgba(16,24,40,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:#f6f7f9;
+      color:var(--ink);
+      line-height:1.55;
+    }
+    .topbar{
+      background:var(--bg);
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;gap:10px;align-items:baseline;font-weight:700;letter-spacing:.2px;white-space:nowrap;
+    }
+    .brand .dot{width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block}
+    .brand span{font-size:14px;opacity:.9}
+    .brand strong{font-size:16px}
+    .nav{display:flex;gap:16px;font-size:13px;opacity:.88;white-space:nowrap;overflow:auto}
+    .nav a{color:#fff;text-decoration:none}
+    .nav a:hover{opacity:.8}
+
+    .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      padding:26px 18px 60px;
+      display:grid;
+      grid-template-columns:1fr 300px;
+      gap:28px;
+    }
+    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
+
+    .paper{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .article{padding:34px}
+    @media(max-width:560px){.article{padding:22px 18px}}
+
+    .eyebrow{
+      font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+      display:flex;gap:10px;align-items:center;margin-bottom:10px
+    }
+    .pill{
+      background:var(--chip);
+      border:1px solid #e5e7eb;
+      padding:3px 10px;
+      border-radius:999px;
+      font-weight:800;
+      color:#374151;
+      letter-spacing:.08em;
+    }
+
+    h1{margin:10px 0 12px;font-size:38px;line-height:1.12;letter-spacing:-.02em}
+    .subhead{font-size:18px;color:#374151;max-width:72ch;margin:0 0 18px}
+
+    .byline{
+      display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+      padding:16px 0 0;margin:18px 0 22px;border-top:1px solid var(--rule);
+      font-size:13px;color:var(--muted);
+    }
+    .byline strong{color:#111827}
+    .sep{opacity:.35}
+
+    figure{margin:22px 0;}
+    figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+
+    .content{
+      font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+      font-size:18px;
+      max-width:74ch;
+    }
+    .content p{margin:0 0 18px}
+    .content h2{
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 10px;color:#111827
+    }
+
+    .callout{
+      background:#fbfbfc;border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin:18px 0 22px;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:14px;color:#111827;
+    }
+    .callout strong{
+      display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#374151;margin-bottom:8px
+    }
+
+    .pull{
+      border-left:3px solid #111827;
+      padding:6px 0 6px 14px;
+      margin:22px 0 22px;
+      color:#111827;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;
+      line-height:1.45;
+    }
+    .pull em{color:#374151;font-style:normal}
+
+    .side{position:sticky;top:14px;align-self:start}
+    @media(max-width:980px){.side{position:static}}
+    .card{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 8px 28px rgba(16,24,40,.05);
+      margin-bottom:16px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#374151;
+    }
+    .mini{font-size:13px;line-height:1.4}
+    .muted{color:var(--muted)}
+    .ul{margin:8px 0 0;padding-left:18px;font-size:13px}
+    .ul li{margin:6px 0}
+
+    .footer{
+      max-width:1080px;
+      margin:0 auto;
+      padding:10px 18px 40px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Rinkside Report</strong>
+      <span>Canes Beat</span>
+    </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="paper">
+      <div class="article">
+        <div class="eyebrow">
+          <span class="pill">Game Preview</span>
+          <span>Week 5</span>
+          <span>•</span>
+          <span>Canes vs Pink Whitney</span>
+        </div>
+
+        <h1>Lines reshuffled, answers required: Canes vs Pink Whitney</h1>
+        <p class="subhead">
+          With captain Jeffrey Golsch out and Andrew Marples still on LTIR, the Canes enter a high-variance matchup against Pink Whitney with new roles, new lines, and no margin for drifting.
+        </p>
+
+        <!-- HERO IMAGE -->
+        <figure>
+          <img
+            src="images/week-5/canes-vs-whitney-week-5.jpg"
+            alt="Canes and Pink Whitney battle for the puck in a high-intensity matchup"
+            style="width:100%; border-radius:12px;"
+          />
+          <figcaption>
+            The Canes want structure. Pink Whitney wants pace. Tonight’s first ten minutes will tell you which game you’re getting.
+          </figcaption>
+        </figure>
+
+        <div class="byline">
+          <div>By <strong>Jordan Hale</strong>, Canes Beat Writer</div>
+          <div class="sep">•</div>
+          <div>Game day</div>
+          <div class="sep">•</div>
+          <div>Week 5</div>
+        </div>
+
+        <div class="callout">
+          <strong>Projected lines & availability</strong>
+          <div class="mini">
+            <div><strong>Out:</strong> Jeffrey Golsch (illness), Andrew Marples (broken toe, LTIR)</div>
+            <div><strong>In:</strong> Garrett Ure (returns from injury)</div>
+            <div><strong>Extra winger:</strong> Eugene Oh (moved up from 5th D)</div>
+            <div style="margin-top:10px;"><strong>Starting goalie:</strong> Michael Brown</div>
+          </div>
+        </div>
+
+        <div class="content">
+          <p>
+            Week 5 arrives at an uncomfortable time for the Canes — not because of the opponent, but because of what’s missing.
+            When a captain sits and a regular defenseman remains out long-term, the line combinations aren’t cosmetic anymore.
+            The responsibilities shift, the matchups change, and the margin for sloppy details shrinks.
+          </p>
+
+          <div class="pull">
+            “In a 12-week season, you don’t get to wait for chemistry to find you — you have to build it on the fly.”
+            <br><em>— Rinkside notes</em>
+          </div>
+
+          <h2>Top line: Sands takes the wheel</h2>
+          <p>
+            With Golsch unavailable, <strong>Andrew Sands</strong> slides to <strong>first-line center</strong>, flanked by
+            <strong>Thomas Pucci</strong> and <strong>Jackson Brown</strong>. This isn’t just a promotion — it’s a test.
+          </p>
+          <p>
+            Sands has been one of the Canes’ most consistent drivers of play, and now he’s tasked with dictating pace from the middle.
+            Pucci adds stability and puck support, while Brown remains the “chaos scorer” who can turn loose pucks into points.
+            If this line can establish zone time early, it gives the Canes the kind of foothold that matters against Pink Whitney.
+          </p>
+
+          <h2>Second line: forecheck-first identity</h2>
+          <p>
+            <strong>Ryan Alvarado</strong> centers the second group with <strong>Ryan Kowal</strong> and <strong>Jason Powers</strong>
+            on the wings — and this is where the Canes’ identity lives tonight.
+          </p>
+          <p>
+            With Golsch out, the Canes lose one of their best “set the tone” forecheckers. This unit has to replace that pressure.
+            Kowal’s straight-line game and Powers’ willingness to finish checks give Alvarado the support he needs to manage the puck and
+            force Pink Whitney defenders into rushed exits.
+          </p>
+
+          <h2>Eugene Oh moves up</h2>
+          <p>
+            The quiet storyline: <strong>Eugene Oh</strong> moves from 5th defenseman to extra winger. His minutes will be managed,
+            and the assignment is simple — short shifts, safe plays, and stay on the right side of the puck.
+            Against a team that thrives on transition, every “simple” play matters.
+          </p>
+
+          <h2>Blue line: Marples–Lee at the top</h2>
+          <p>
+            On the back end, the Canes are still built around a strong top pair: <strong>David Marples</strong> and <strong>Ken Lee</strong>.
+            If the Canes are going to control this game, it likely starts with those two getting the puck moving cleanly and keeping plays alive.
+          </p>
+          <p>
+            Behind them, the return of <strong>Garrett Ure</strong> changes the picture immediately. Ure skating alongside <strong>Chad Gerdes</strong>
+            gives the Canes a second pair that can survive shifts without getting stuck defending for long stretches.
+          </p>
+
+          <h2>In net: Michael Brown</h2>
+          <p>
+            Against Pink Whitney, the first goal often matters twice — once on the scoreboard, and once in how it shapes risk tolerance.
+            <strong>Michael Brown</strong> gets the start, and his job is clear: erase the one early mistake that turns this into a track meet.
+          </p>
+
+          <h2>What decides it</h2>
+          <p>
+            This matchup is a fight over pace. Pink Whitney wants space and quick strikes. The Canes want structure, zone time, and layered pressure.
+            The first ten minutes will reveal which team is comfortable — and which team is chasing.
+          </p>
+
+          <p>
+            For the Canes, the formula is straightforward: clean exits, disciplined changes, and forecheck pressure that forces turnovers instead of trading rushes.
+            For Pink Whitney, it’s simple too: turn one mistake into two chances and make the game feel fast.
+          </p>
+
+          <h2>Why it matters</h2>
+          <p>
+            In a 12-week season with a Week 8 trade deadline looming, these games don’t just decide points — they decide belief.
+            Tonight is a depth test, a leadership test, and a patience test.
+          </p>
+
+          <p>
+            The Canes don’t need a perfect game. They need a connected one — and a finish that matches the work.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="card">
+        <h3>Tonight’s keys</h3>
+        <div class="mini">
+          <ul class="ul">
+            <li>Win the first 10 minutes without trading rushes.</li>
+            <li>Lean on Marples–Lee to manage puck decisions.</li>
+            <li>Forecheck pressure from Alvarado–Kowal–Powers.</li>
+            <li>Stay disciplined with new line combinations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Players to watch</h3>
+        <div class="mini">
+          <div><strong>Andrew Sands</strong><div class="muted">New 1C responsibilities, tone setter</div></div>
+          <div style="margin-top:10px;"><strong>David Marples</strong><div class="muted">Puck transport, transition control</div></div>
+          <div style="margin-top:10px;"><strong>Michael Brown</strong><div class="muted">Prevent the early swing goal</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Availability</h3>
+        <div class="mini muted">
+          Out: Jeffrey Golsch (illness)<br>
+          Out: Andrew Marples (broken toe, LTIR)<br>
+          In: Garrett Ure (returns)<br>
+          Eugene Oh: moved to winger
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Rinkside Report</div>
+</body>
+</html>
