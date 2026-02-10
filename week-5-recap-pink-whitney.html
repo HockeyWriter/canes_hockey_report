@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Week 5 Recap: Pink Whitney 2, Canes 1</title>
+  <style>
+    :root{
+      --bg:#0b0c0f; --ink:#121212; --muted:#6b7280; --rule:#e6e6e6;
+      --paper:#ffffff; --chip:#f3f4f6; --shadow:0 8px 28px rgba(16,24,40,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:#f6f7f9;
+      color:var(--ink);
+      line-height:1.55;
+    }
+    .topbar{
+      background:var(--bg);
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;gap:10px;align-items:baseline;font-weight:700;letter-spacing:.2px;white-space:nowrap;
+    }
+    .brand .dot{width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block}
+    .brand span{font-size:14px;opacity:.9}
+    .brand strong{font-size:16px}
+    .nav{display:flex;gap:16px;font-size:13px;opacity:.88;white-space:nowrap;overflow:auto}
+    .nav a{color:#fff;text-decoration:none}
+    .nav a:hover{opacity:.8}
+
+    .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      padding:26px 18px 60px;
+      display:grid;
+      grid-template-columns:1fr 300px;
+      gap:28px;
+    }
+    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
+
+    .paper{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .article{padding:34px}
+    @media(max-width:560px){.article{padding:22px 18px}}
+
+    .eyebrow{
+      font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+      display:flex;gap:10px;align-items:center;margin-bottom:10px
+    }
+    .pill{
+      background:var(--chip);
+      border:1px solid #e5e7eb;
+      padding:3px 10px;
+      border-radius:999px;
+      font-weight:800;
+      color:#374151;
+      letter-spacing:.08em;
+    }
+
+    h1{margin:10px 0 12px;font-size:38px;line-height:1.12;letter-spacing:-.02em}
+    .subhead{font-size:18px;color:#374151;max-width:74ch;margin:0 0 18px}
+
+    .byline{
+      display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+      padding:16px 0 0;margin:18px 0 22px;border-top:1px solid var(--rule);
+      font-size:13px;color:var(--muted);
+    }
+    .byline strong{color:#111827}
+    .sep{opacity:.35}
+
+    figure{margin:22px 0;}
+    figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+
+    .callout{
+      background:#fbfbfc;border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin:18px 0 22px;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:14px;color:#111827;
+    }
+    .callout strong{
+      display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#374151;margin-bottom:8px
+    }
+
+    .content{
+      font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+      font-size:18px;
+      max-width:74ch;
+    }
+    .content p{margin:0 0 18px}
+    .content h2{
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 10px;color:#111827
+    }
+
+    .pull{
+      border-left:3px solid #111827;
+      padding:6px 0 6px 14px;
+      margin:22px 0 22px;
+      color:#111827;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;
+      line-height:1.45;
+    }
+    .pull em{color:#374151;font-style:normal}
+
+    .side{position:sticky;top:14px;align-self:start}
+    @media(max-width:980px){.side{position:static}}
+    .card{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 8px 28px rgba(16,24,40,.05);
+      margin-bottom:16px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#374151;
+    }
+    .mini{font-size:13px;line-height:1.4}
+    .muted{color:var(--muted)}
+    .ul{margin:8px 0 0;padding-left:18px;font-size:13px}
+    .ul li{margin:6px 0}
+
+    .footer{
+      max-width:1080px;
+      margin:0 auto;
+      padding:10px 18px 40px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Rinkside Report</strong>
+      <span>Canes Beat</span>
+    </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="paper">
+      <div class="article">
+        <div class="eyebrow">
+          <span class="pill">Game Recap</span>
+          <span>Week 5</span>
+          <span>•</span>
+          <span>Canes vs Pink Whitney</span>
+        </div>
+
+        <h1>Canes fall 2–1 to Pink Whitney in a night defined by silence</h1>
+        <p class="subhead">
+          The final score says “one-goal game.” The game itself was quieter: 40 minutes of offensive struggle, a late push, and not enough finish.
+        </p>
+
+        <!-- HERO IMAGE -->
+        <figure>
+          <img
+            src="images/week-5/recap-canes-vs-whitney-2-1.png"
+            alt="A physical moment along the boards during Canes vs Pink Whitney"
+            style="width:100%; border-radius:12px;"
+          />
+          <figcaption>
+            Pink Whitney dictated pace early and forced the Canes into a night of icings, offsides, and broken entries.
+          </figcaption>
+        </figure>
+
+        <div class="byline">
+          <div>By <strong>Jordan Hale</strong>, Canes Beat Writer</div>
+          <div class="sep">•</div>
+          <div>Final</div>
+          <div class="sep">•</div>
+          <div>Pink Whitney 2, Canes 1</div>
+        </div>
+
+        <div class="callout">
+          <strong>Game summary</strong>
+          <div class="mini">
+            <div><strong>After 1:</strong> Pink Whitney 1, Canes 0</div>
+            <div><strong>After 2:</strong> Pink Whitney 1, Canes 0</div>
+            <div><strong>Final:</strong> Pink Whitney 2, Canes 1</div>
+            <div style="margin-top:10px;"><strong>Canes goal:</strong> Andrew Sands (3rd)</div>
+          </div>
+        </div>
+
+        <div class="content">
+          <p>
+            The Canes didn’t lose this game late. They lost it slowly.
+          </p>
+
+          <p>
+            A <strong>2–1</strong> final against Pink Whitney reads like another tight margin night. But the details were harsher:
+            the Canes struggled to exit and enter the zone cleanly, struggled to generate shots, and spent too much of the first two
+            periods defending a game they never dictated.
+          </p>
+
+          <h2>Lines and deployment</h2>
+          <p>
+            With <strong>Jeffrey Golsch</strong> out due to illness and <strong>Jason Powers</strong> ultimately unavailable,
+            Coach Matt Callahan was forced into another round of line juggling. The top group featured
+            <strong>Andrew Sands</strong> with <strong>Ryan Kowal</strong> and <strong>Eugene Oh</strong>.
+            The second unit ran <strong>Ryan Alvarado</strong> with <strong>Thomas Pucci</strong> and <strong>Jackson Brown</strong>.
+          </p>
+
+          <p>
+            On the back end, the Canes leaned on their intended pairs: <strong>David Marples</strong> and <strong>Ken Lee</strong> as the top unit,
+            with <strong>Garrett Ure</strong> (returning from injury) alongside <strong>Chad Gerdes</strong>.
+            <strong>Andrew Marples</strong> remains on long-term injured reserve.
+          </p>
+
+          <p>
+            <strong>Michael Brown</strong> started in net.
+          </p>
+
+          <h2>First period: Pink Whitney sets the tone</h2>
+          <p>
+            Pink Whitney came out with sustained pressure and converted about five to six minutes in — a clean goal that didn’t involve a glaring breakdown,
+            just early pace and the kind of offensive zone time the Canes didn’t match.
+          </p>
+
+          <p>
+            Offensively, the Canes were nearly silent. The issues were systemic: passes to nowhere in the neutral zone, icings when exits were rushed,
+            offsides on broken entries, and a general inability to generate volume. Through the entire first period, the Canes produced
+            <strong>one to two shots on goal</strong> total.
+          </p>
+
+          <h2>Second period: low-event hockey, no momentum</h2>
+          <p>
+            The second period was quieter, but it still favored Pink Whitney. The visitors stayed physical, finished checks, and controlled space.
+            The Canes couldn’t establish extended offensive zone time and still struggled to carry pucks through the neutral zone with control.
+          </p>
+
+          <p>
+            At 1–0, the game was still within reach — but it felt uncomfortably under control for Pink Whitney.
+          </p>
+
+          <h2>Third period: a push, then a punch back</h2>
+          <p>
+            The Canes entered the third with a deflated bench, then found a pulse. Sands spoke up — “We’ve got to get one. We just need one.” —
+            and for the first time all night the Canes played with purpose.
+          </p>
+
+          <p>
+            <strong>Sands and Kowal</strong> drove the push, generating looks and forcing longer defensive shifts. But mid-period, the margin evaporated:
+            Brown surrendered a soft goal — a puck he’d want back — and suddenly the Canes were chasing two instead of one.
+          </p>
+
+          <p>
+            To their credit, they didn’t fold. Sands eventually buried one to make it <strong>2–1</strong>, and the Canes pulled the goalie late.
+            They created a couple of dangerous looks, but couldn’t find the equalizer before the horn.
+          </p>
+
+          <div class="pull">
+            The Canes didn’t lose because of one play. They lost because they didn’t threaten enough for 40 minutes to make the game theirs.
+          </div>
+
+          <h2>What it means</h2>
+          <p>
+            Missing Golsch and Powers didn’t decide the result on its own — but it did matter in a game defined by physicality.
+            Powers’ presence, in particular, would have helped answer the tone Pink Whitney set early.
+          </p>
+
+          <p>
+            The deeper concern is offensive clarity. In a 12-week season with a Week 8 trade deadline looming, games like this don’t just cost points —
+            they compress options.
+          </p>
+
+          <p>
+            Postgame, the locker room matched the night: silent.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="card">
+        <h3>Final score</h3>
+        <div class="mini"><strong>Pink Whitney 2</strong><br><span class="muted">Canes 1</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Notable</h3>
+        <div class="mini">
+          <ul class="ul">
+            <li>Canes generated ~1–2 shots in the 1st period.</li>
+            <li>Pink Whitney controlled early pace + physicality.</li>
+            <li>Late Canes push led by Sands–Kowal.</li>
+            <li>Soft 3rd period goal stretched it to 2–0.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Availability</h3>
+        <div class="mini muted">
+          Out: Jeffrey Golsch (illness)<br>
+          Out: Jason Powers (did not play)<br>
+          LTIR: Andrew Marples (broken toe)<br>
+          Eugene Oh: played wing
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Rinkside Report</div>
+</body>
+</html>
