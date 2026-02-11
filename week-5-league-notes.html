@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>League Notes — Week 5</title>
+  <style>
+    :root{
+      --bg:#0b0c0f; --ink:#121212; --muted:#6b7280; --rule:#e6e6e6;
+      --paper:#ffffff; --chip:#f3f4f6; --shadow:0 8px 28px rgba(16,24,40,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:#f6f7f9;
+      color:var(--ink);
+      line-height:1.55;
+    }
+    .topbar{
+      background:var(--bg);
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;gap:10px;align-items:baseline;font-weight:700;letter-spacing:.2px;white-space:nowrap;
+    }
+    .brand .dot{width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block}
+    .brand span{font-size:14px;opacity:.9}
+    .brand strong{font-size:16px}
+    .nav{display:flex;gap:16px;font-size:13px;opacity:.88;white-space:nowrap;overflow:auto}
+    .nav a{color:#fff;text-decoration:none}
+    .nav a:hover{opacity:.8}
+
+    .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      padding:26px 18px 60px;
+      display:grid;
+      grid-template-columns:1fr 330px;
+      gap:22px;
+    }
+    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
+
+    .paper{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .article{padding:34px}
+    @media(max-width:560px){.article{padding:22px 18px}}
+
+    .eyebrow{
+      font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+      display:flex;gap:10px;align-items:center;margin-bottom:10px
+    }
+    .pill{
+      background:var(--chip);
+      border:1px solid #e5e7eb;
+      padding:3px 10px;
+      border-radius:999px;
+      font-weight:800;
+      color:#374151;
+      letter-spacing:.08em;
+    }
+
+    h1{margin:10px 0 12px;font-size:38px;line-height:1.12;letter-spacing:-.02em}
+    .subhead{font-size:18px;color:#374151;max-width:74ch;margin:0 0 18px}
+
+    .byline{
+      display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+      padding:16px 0 0;margin:18px 0 22px;border-top:1px solid var(--rule);
+      font-size:13px;color:var(--muted);
+    }
+    .byline strong{color:#111827}
+    .sep{opacity:.35}
+
+    figure{margin:22px 0;}
+    figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+
+    .callout{
+      background:#fbfbfc;border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin:18px 0 22px;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:14px;color:#111827;
+    }
+    .callout strong{
+      display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#374151;margin-bottom:8px
+    }
+    .callout ul{margin:0;padding-left:18px}
+    .callout li{margin:6px 0}
+
+    .content{
+      font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+      font-size:18px;
+      max-width:74ch;
+    }
+    .content p{margin:0 0 18px}
+    .content h2{
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 10px;color:#111827
+    }
+
+    .quote{
+      border-left:3px solid #111827;
+      padding:6px 0 6px 14px;
+      margin:22px 0 22px;
+      color:#111827;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;
+      line-height:1.45;
+      background: #ffffff;
+    }
+    .quote em{color:#374151;font-style:normal}
+
+    .side{display:flex;flex-direction:column;gap:16px}
+    .card{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 8px 28px rgba(16,24,40,.05);
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#374151;
+    }
+    .mini{font-size:13px;line-height:1.4}
+    .muted{color:var(--muted)}
+    .ul{margin:8px 0 0;padding-left:18px;font-size:13px}
+    .ul li{margin:6px 0}
+
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{padding:8px 6px;border-top:1px solid var(--rule);text-align:left;vertical-align:middle}
+    th{
+      font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#374151;background:#fbfbfc;border-top:none;
+    }
+    td.num{text-align:right;font-variant-numeric:tabular-nums}
+    .ranknum{width:22px;color:#6b7280;font-variant-numeric:tabular-nums}
+
+    .footer{
+      max-width:1080px;
+      margin:0 auto;
+      padding:10px 18px 40px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Rinkside Report</strong>
+      <span>League</span>
+    </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- MAIN -->
+    <div class="paper">
+      <div class="article">
+        <div class="eyebrow">
+          <span class="pill">League Notes</span>
+          <span>Week 5</span>
+          <span>•</span>
+          <span>Winter 2026</span>
+        </div>
+
+        <h1>League Notes: Week 5 reshaped the margins</h1>
+        <p class="subhead">
+          Upset at the top, a discipline win at the bottom, and a one-goal grinder in the middle. The standings stayed tight — the tone did not.
+        </p>
+
+        <!-- HERO IMAGE -->
+        <figure>
+          <img
+            src="images/week-5/league-notes-week-5.png"
+            alt="League Notes Week 5 graphic with results and teams"
+            style="width:100%; border-radius:12px;"
+          />
+          <figcaption>
+            Week 5 tested identity across the league — and made goal differential feel like a weekly pressure point, not a trivia stat.
+          </figcaption>
+        </figure>
+
+        <div class="byline">
+          <div>By <strong>Alex Mercer</strong>, League Insider</div>
+          <div class="sep">•</div>
+          <div>Week 5</div>
+          <div class="sep">•</div>
+          <div>12-week season (trade deadline Week 8)</div>
+        </div>
+
+        <div class="callout">
+          <strong>Week 5 results</strong>
+          <ul>
+            <li><strong>Owls 4, Chanclas 0</strong></li>
+            <li><strong>Pink Whitney 2, Canes 1</strong></li>
+            <li><strong>Banditos 3, Fridge Raiders 2</strong></li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <p>
+            Week 5 didn’t just produce results — it shifted belief.
+            The league remains compressed in points, but the way teams won and lost made the margins feel louder.
+            In a 12-week season with goal differential as the first tiebreaker, there’s no such thing as a “harmless” night anymore.
+          </p>
+
+          <h2>The Owls forced a recalibration</h2>
+          <p>
+            The loudest building of the night wasn’t the one you expected. The Owls’ <strong>4–0 win over the previously unbeaten Chanclas</strong>
+            wasn’t a squeaked-out upset — it was control. With their captain returning from LTIR and immediately driving offense, the Owls didn’t borrow a result.
+            They earned it, and they did it against the league’s standard.
+          </p>
+
+          <div class="quote">
+            “Arena was rocking last night,” one fan said walking up the concourse — a small detail that felt like a bigger one by the third period.
+          </div>
+
+          <p>
+            For weeks, the Owls leaned on structure and belief without much reward. This time, belief came with goals — and with a shutout that
+            tightens the top of the table and reframes the league’s hierarchy.
+          </p>
+
+          <h2>The Chanclas absorbed their first real punch</h2>
+          <p>
+            The Chanclas are still in first place. But Week 5 removed inevitability. Being shut out 4–0 matters not because it erases four weeks of
+            disciplined hockey, but because it exposed a rare vulnerability: when forced to chase, their structure didn’t settle the game.
+          </p>
+
+          <p>
+            In a standings picture where goal differential sorts teams tied on points, a night like this lingers longer than a one-goal loss ever would.
+            The Chanclas remain the standard — they’re just no longer untouchable.
+          </p>
+
+          <h2>Banditos won the right way</h2>
+          <p>
+            The Banditos’ <strong>3–2 win over the Fridge Raiders</strong> wasn’t flashy, but it may be their most important result of the season.
+            This wasn’t chaos. This wasn’t survival. It was a disciplined, low-event grinder won by a team that’s spent the first month fighting its own impulses.
+          </p>
+
+          <p>
+            In a tightly packed middle of the table, method matters. This was the kind of win that stabilizes a season rather than inflates it.
+          </p>
+
+          <h2>The Canes felt the weight of one goal — again</h2>
+          <p>
+            The Canes’ <strong>2–1 loss to Pink Whitney</strong> didn’t collapse into chaos. It was controlled, tight, and structurally familiar.
+            Which may be part of the problem. The offense arrived late, and the building never felt fully convinced until urgency forced it.
+          </p>
+
+          <div class="quote">
+            “Wives and girlfriends are pissed. No free chicken for two weeks,” one frustrated fan laughed — referring to the Raising Cane’s meal tradition that follows Canes wins.
+            Small traditions amplify bigger frustration.
+          </div>
+
+          <p>
+            In a compressed season, the anxiety shows up quickly. Another comment caught the temperature:
+          </p>
+
+          <div class="quote">
+            “If the Canes lose next week kiss the playoffs goodbye.”
+            <br><em>— overheard in the stands</em>
+          </div>
+
+          <p>
+            It’s dramatic. It’s premature. But it isn’t coming from nowhere. With multiple teams tied on points and separated by differential,
+            “close” isn’t a comfort — it’s a warning.
+          </p>
+
+          <h2>Pink Whitney’s firepower keeps paying</h2>
+          <p>
+            Pink Whitney didn’t dominate the Canes. They capitalized. Their offense remains the league’s most dangerous variable —
+            and in a league where total goals become the second tiebreaker, scoring isn’t just style. It’s leverage.
+          </p>
+
+          <h2>What the standings are quietly telling us</h2>
+          <p>
+            Six points separate first from last. Four teams sit tied on points in the middle, sorted by goal differential and then goals for.
+            With the Week 8 trade deadline approaching, the league is shifting from “it’s early” to “it’s short.”
+          </p>
+
+          <p>
+            Week 5 didn’t crown a favorite. It removed assumptions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="side">
+      <div class="card">
+        <h3>Standings (Through Week 5)</h3>
+        <div class="mini muted" style="margin-bottom:10px;">
+          Tiebreakers: Goal Differential, then Goals For.
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width:28px;">#</th>
+              <th>Team</th>
+              <th class="num">PTS</th>
+              <th class="num">GD</th>
+              <th class="num">GF</th>
+              <th class="num">GA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ranknum">1</td><td><strong>Chanclas</strong></td>
+              <td class="num"><strong>8</strong></td><td class="num">+6</td><td class="num">12</td><td class="num">6</td>
+            </tr>
+            <tr>
+              <td class="ranknum">2</td><td><strong>Pink Whitney</strong></td>
+              <td class="num"><strong>6</strong></td><td class="num">+5</td><td class="num">19</td><td class="num">14</td>
+            </tr>
+            <tr>
+              <td class="ranknum">3</td><td><strong>Canes</strong></td>
+              <td class="num"><strong>4</strong></td><td class="num">+5</td><td class="num">13</td><td class="num">8</td>
+            </tr>
+            <tr>
+              <td class="ranknum">4</td><td><strong>Owls</strong></td>
+              <td class="num"><strong>4</strong></td><td class="num">0</td><td class="num">7</td><td class="num">7</td>
+            </tr>
+            <tr>
+              <td class="ranknum">5</td><td><strong>Banditos</strong></td>
+              <td class="num"><strong>4</strong></td><td class="num">-1</td><td class="num">10</td><td class="num">11</td>
+            </tr>
+            <tr>
+              <td class="ranknum">6</td><td><strong>Fridge Raiders</strong></td>
+              <td class="num"><strong>4</strong></td><td class="num">-2</td><td class="num">15</td><td class="num">17</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Pressure watch</h3>
+        <div class="mini">
+          <ul class="ul">
+            <li><strong>Owls:</strong> bought belief (now must repeat it).</li>
+            <li><strong>Chanclas:</strong> still first, but no longer insulated.</li>
+            <li><strong>Banditos:</strong> discipline win — stabilize or drift.</li>
+            <li><strong>Fridge Raiders:</strong> volatility spotlight intensifies.</li>
+            <li><strong>Canes:</strong> margin to wait is shrinking.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Deadline clock</h3>
+        <div class="mini muted">
+          Trade deadline is Week 8. With a 12-week season, decisions arrive fast — and “almost” results compress options.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Rinkside Report</div>
+</body>
+</html>
