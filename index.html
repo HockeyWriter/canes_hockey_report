@@ -3,144 +3,430 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rinkside Report — Canes + League Coverage</title>
+  <title>Rinkside Report — San Antonio Men’s Advanced League</title>
   <style>
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: #f6f7f9;
-      color: #111827;
+    :root{
+      --bg:#0b0c0f;
+      --ink:#121212;
+      --muted:#6b7280;
+      --rule:#e6e6e6;
+      --paper:#ffffff;
+      --chip:#f3f4f6;
+      --shadow:0 8px 28px rgba(16,24,40,.06);
     }
-    .header {
-      background: #0b0c0f;
-      color: #fff;
-      padding: 18px;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--ink);
+      background:#f6f7f9;
+      line-height:1.55;
     }
-    .header h1 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: bold;
+
+    /* Top bar */
+    .topbar{
+      background:var(--bg);
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
     }
-    .nav {
-      display: flex;
-      justify-content: center;
-      gap: 22px;
-      margin-top: 12px;
-      font-size: 14px;
+    .brand{
+      display:flex;
+      gap:10px;
+      align-items:baseline;
+      font-weight:700;
+      letter-spacing:.2px;
+      white-space:nowrap;
     }
-    .nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
+    .brand .dot{
+      width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block;
     }
-    .nav a:hover {
-      opacity: 0.8;
+    .brand span{font-size:14px;opacity:.9}
+    .brand strong{font-size:16px}
+    .nav{
+      display:flex;
+      gap:16px;
+      font-size:13px;
+      opacity:.88;
+      white-space:nowrap;
+      overflow:auto;
     }
-    .container {
-      max-width: 980px;
-      margin: 26px auto;
-      padding: 0 18px;
+    .nav a{color:#fff;text-decoration:none}
+    .nav a:hover{opacity:.8}
+
+    /* Layout */
+    .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      padding:22px 18px 60px;
+      display:grid;
+      grid-template-columns: 1fr 330px;
+      gap:22px;
     }
-    .section {
-      margin-bottom: 32px;
+    @media (max-width:980px){
+      .wrap{grid-template-columns:1fr}
     }
-    .section h2 {
-      font-size: 22px;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 6px;
-      margin-bottom: 14px;
+
+    /* Cards */
+    .card{
+      background:var(--paper);
+      border:1px solid #ededed;
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
     }
-    .linklist {
-      list-style: none;
-      padding: 0;
+    .pad{padding:18px}
+
+    /* Hero */
+    .hero{padding:22px}
+    .eyebrow{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-bottom:10px;
     }
-    .linklist li {
-      margin: 10px 0;
-      font-size: 18px;
+    .tag{
+      background:var(--chip);
+      border:1px solid #e5e7eb;
+      padding:3px 10px;
+      border-radius:999px;
+      font-weight:800;
+      color:#374151;
+      letter-spacing:.08em;
     }
-    .linklist a {
-      color: #0b0c0f;
-      text-decoration: none;
-      font-weight: 600;
+    .hero h1{
+      margin:0 0 10px;
+      font-size:32px;
+      line-height:1.12;
+      letter-spacing:-.02em;
     }
-    .linklist a:hover {
-      text-decoration: underline;
+    .hero p{
+      margin:0 0 14px;
+      color:#374151;
+      font-size:16px;
+      max-width:70ch;
     }
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      margin: 40px 0;
-      color: #6b7280;
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:14px;
+    }
+    .btn{
+      padding:10px 14px;
+      border-radius:10px;
+      background:#111827;
+      color:white;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:800;
+      display:inline-block;
+    }
+    .btn.secondary{
+      background:white;
+      color:#111827;
+      border:1px solid #e5e7eb;
+    }
+    .btn:hover{opacity:.92}
+
+    /* List rows */
+    .section-title{
+      padding:14px 18px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#374151;
+      border-top:1px solid var(--rule);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+    }
+    .section-title .muted{color:var(--muted);font-weight:500;letter-spacing:.08em;text-transform:none}
+    .row{
+      padding:14px 18px;
+      border-top:1px solid var(--rule);
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      justify-content:space-between;
+    }
+    .row:first-child{border-top:none}
+    .row a{
+      text-decoration:none;
+      color:inherit;
+      flex:1;
+    }
+    .kicker{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .headline{
+      font-size:16px;
+      font-weight:900;
+      line-height:1.25;
+      margin:0 0 6px;
+    }
+    .dek{
+      margin:0;
+      color:#374151;
+      font-size:13px;
+      line-height:1.35;
+      max-width:70ch;
+    }
+    .meta{
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+      padding-top:18px;
+    }
+
+    /* Opinion callout row */
+    .opinion{
+      background:#fff7ed;
+    }
+    .opinion .kicker{color:#991b1b}
+
+    /* Sidebar */
+    .side{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .mini{font-size:13px;line-height:1.4}
+    .muted{color:var(--muted)}
+    .ul{margin:8px 0 0;padding-left:18px;font-size:13px}
+    .ul li{margin:6px 0}
+
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th, td{padding:8px 6px;border-top:1px solid var(--rule);text-align:left;vertical-align:middle}
+    th{
+      font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#374151;background:#fbfbfc;border-top:none;
+    }
+    td.num{text-align:right;font-variant-numeric: tabular-nums;}
+    .ranknum{width:22px;color:#6b7280;font-variant-numeric: tabular-nums;}
+
+    .footer{
+      max-width:1080px;
+      margin:0 auto;
+      padding:10px 18px 40px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
     }
   </style>
 </head>
 
 <body>
-
-  <div class="header">
-    <h1>Rinkside Report</h1>
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Rinkside Report</strong>
+      <span>San Antonio Men’s Advanced League</span>
+    </div>
     <div class="nav">
-      <a href="#latest">Latest</a>
-      <a href="#canes">Canes Coverage</a>
-      <a href="#league">League Notes</a>
-      <a href="#archive">Archive</a>
+      <a href="index.html">Home</a>
     </div>
   </div>
 
-  <div class="container">
+  <div class="wrap">
+    <!-- MAIN COLUMN -->
+    <div class="card">
+      <div class="hero">
+        <div class="eyebrow">
+          <span class="tag">This Week</span>
+          <span>LEAGUE → PREVIEW → RECAP</span>
+        </div>
 
-    <!-- Latest Section -->
-    <div id="latest" class="section">
-      <h2>📍 Latest Updates</h2>
-      <ul class="linklist">
-        <li><a href="week-5-league-notes.html">Week 5 League Notes — Narrative & Standings Impact</a></li>
-        <li><a href="week-5-recap-pink-whitney-2-1.html">Week 5 Canes Recap: Pink Whitney 2, Canes 1</a></li>
-        <li><a href="canes-opinion-week-5.html">Week 5 Canes Opinion — Tough Questions, Tight Season</a></li>
-        <li><a href="week-5-controversy.html">Week 5 League Controversy / Power Rankings</a> (Coming Friday)</li>
-      </ul>
+        <h1>Week 5: belief shifted, margins tightened</h1>
+        <p>
+          Owls shocked the Chanclas, Banditos won a grinder, and Pink Whitney edged the Canes. With GD as the first tiebreaker, every goal is leverage.
+        </p>
+
+        <div class="cta">
+          <a class="btn" href="week-5-league-notes.html">Read: Week 5 League Notes</a>
+          <a class="btn secondary" href="week-5-preview-pink-whitney.html">Read: Canes Preview (vs Pink Whitney)</a>
+          <a class="btn secondary" href="week-5-recap-pink-whitney.html">Read: Canes Recap (vs Pink Whitney)</a>
+        </div>
+      </div>
+
+      <!-- Opinion callout -->
+      <div class="row opinion">
+        <a href="opinion-who-is-serious.html">
+          <div class="kicker">Opinion</div>
+          <div class="headline">At some point, the league has to decide who’s serious</div>
+          <p class="dek">
+            Pressure is rising across the table — and the Week 8 trade deadline is approaching faster than teams want to admit.
+          </p>
+        </a>
+        <div class="meta">Opinion</div>
+      </div>
+
+      <div class="section-title">
+        <span>Latest stories</span>
+        <span class="muted">Updated through Week 5</span>
+      </div>
+
+      <div class="row">
+        <a href="week-5-league-notes.html">
+          <div class="kicker">League Notes • Week 5</div>
+          <div class="headline">League Notes: Week 5 reshaped the margins</div>
+          <p class="dek">Owls statement win, Banditos discipline grinder, and the Canes’ offense stays tight.</p>
+        </a>
+        <div class="meta">6 min</div>
+      </div>
+
+      <div class="row">
+        <a href="week-5-recap-pink-whitney.html">
+          <div class="kicker">Game Recap • Canes</div>
+          <div class="headline">Canes fall 2–1 to Pink Whitney in a night defined by silence</div>
+          <p class="dek">Two quiet periods, a late push led by Sands, and no equalizer.</p>
+        </a>
+        <div class="meta">4 min</div>
+      </div>
+
+      <div class="row">
+        <a href="week-5-preview-pink-whitney.html">
+          <div class="kicker">Game Preview • Canes</div>
+          <div class="headline">Lines reshuffled, answers required: Canes vs Pink Whitney</div>
+          <p class="dek">Sands at 1C, Ure returns, and the Canes try to keep pace from turning into chaos.</p>
+        </a>
+        <div class="meta">5 min</div>
+      </div>
+
+      <div class="section-title">
+        <span>Archive</span>
+        <span class="muted">Past weeks</span>
+      </div>
+
+      <div class="row">
+        <a href="week-4-league-notes.html">
+          <div class="kicker">League Notes • Week 4</div>
+          <div class="headline">Week 4 League Notes: Structure wins, chaos leaks points</div>
+          <p class="dek">Chanclas stayed clinical, Pink Whitney went nuclear, and the Owls proved one goal can be enough.</p>
+        </a>
+        <div class="meta">Week 4</div>
+      </div>
+
+      <div class="row">
+        <a href="week-4-recap-owls.html">
+          <div class="kicker">Game Recap • Week 4</div>
+          <div class="headline">Canes do everything but score in 1–0 loss to Owls</div>
+          <p class="dek">Pressure without payoff, decided by an early bounce.</p>
+        </a>
+        <div class="meta">Week 4</div>
+      </div>
+
+      <div class="row">
+        <a href="week-3-power-rankings.html">
+          <div class="kicker">League Beat • Week 3</div>
+          <div class="headline">Week 3 Power Rankings: early tiers emerge</div>
+          <p class="dek">The first clear read on who’s steady, who’s volatile, and who’s already under pressure.</p>
+        </a>
+        <div class="meta">Week 3</div>
+      </div>
+
+      <div class="row">
+        <a href="week-3-recap-banditos.html">
+          <div class="kicker">Game Recap • Week 3</div>
+          <div class="headline">Statement night: Canes blank Banditos 5–0</div>
+          <p class="dek">Complete game, shutout, and the blueprint at its best.</p>
+        </a>
+        <div class="meta">Week 3</div>
+      </div>
+
+      <div class="row">
+        <a href="week-2-recap-pink-whitney.html">
+          <div class="kicker">Game Recap • Week 2</div>
+          <div class="headline">Canes grind out a 3–2 win over Pink Whitney</div>
+          <p class="dek">Discipline and structure hold in a tight one.</p>
+        </a>
+        <div class="meta">Week 2</div>
+      </div>
+
+      <div class="row">
+        <a href="week-1-recap-fridge-raiders.html">
+          <div class="kicker">Game Recap • Week 1</div>
+          <div class="headline">Canes drop opener in track meet: Fridge Raiders 5, Canes 4</div>
+          <p class="dek">Four goals weren’t enough in a high-event start.</p>
+        </a>
+        <div class="meta">Week 1</div>
+      </div>
+
+      <div class="row">
+        <a href="opinion-are-the-canes-soft.html">
+          <div class="kicker">Opinion</div>
+          <div class="headline">Are the Canes actually built to contend — or just to compete?</div>
+          <p class="dek">A harsh look at finishing, toughness, and whether this core has the edge to win ugly.</p>
+        </a>
+        <div class="meta">Opinion</div>
+      </div>
     </div>
 
-    <!-- Canes Section -->
-    <div id="canes" class="section">
-      <h2>🔥 Canes Coverage</h2>
-      <ul class="linklist">
-        <li><a href="week-5-recap-pink-whitney-2-1.html">Week 5: Canes vs Pink Whitney Recap</a></li>
-        <li><a href="canes-profile-sands.html">Player Profile: Andrew Sands</a></li>
-        <li><a href="canes-profile-marples.html">Player Profile: David Marples</a></li>
-        <li><a href="canes-profile-alvarado.html">Player Profile: Ryan Alvarado</a></li>
-        <li><a href="canes-profile-kowal.html">Player Profile: Ryan Kowal</a></li>
-        <li><a href="canes-depth-notes.html">Depth Notes & Deployment Patterns</a></li>
-      </ul>
-    </div>
+    <!-- SIDEBAR -->
+    <div class="side">
+      <div class="card pad">
+        <div class="eyebrow">
+          <span class="tag">Standings</span>
+          <span class="muted">Through Week 5</span>
+        </div>
+        <div class="mini muted" style="margin-bottom:10px;">
+          Tiebreakers: Goal Differential, then Goals For.
+        </div>
 
-    <!-- League Section -->
-    <div id="league" class="section">
-      <h2>🌍 League Notes</h2>
-      <ul class="linklist">
-        <li><a href="week-5-league-notes.html">Week 5 League Notes & Standings Perspective</a></li>
-        <li><a href="league-standings.html">Current Standings & Tiebreaker Table</a></li>
-        <li><a href="trade-deadline-watch.html">Trade Deadline Watch</a></li>
-      </ul>
-    </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width:28px;">#</th>
+              <th>Team</th>
+              <th class="num">PTS</th>
+              <th class="num">GD</th>
+              <th class="num">GF</th>
+              <th class="num">GA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="ranknum">1</td><td><strong>Chanclas</strong></td><td class="num"><strong>8</strong></td><td class="num">+6</td><td class="num">12</td><td class="num">6</td></tr>
+            <tr><td class="ranknum">2</td><td><strong>Pink Whitney</strong></td><td class="num"><strong>6</strong></td><td class="num">+5</td><td class="num">19</td><td class="num">14</td></tr>
+            <tr><td class="ranknum">3</td><td><strong>Canes</strong></td><td class="num"><strong>4</strong></td><td class="num">+5</td><td class="num">13</td><td class="num">8</td></tr>
+            <tr><td class="ranknum">4</td><td><strong>Owls</strong></td><td class="num"><strong>4</strong></td><td class="num">0</td><td class="num">7</td><td class="num">7</td></tr>
+            <tr><td class="ranknum">5</td><td><strong>Banditos</strong></td><td class="num"><strong>4</strong></td><td class="num">-1</td><td class="num">10</td><td class="num">11</td></tr>
+            <tr><td class="ranknum">6</td><td><strong>Fridge Raiders</strong></td><td class="num"><strong>4</strong></td><td class="num">-2</td><td class="num">15</td><td class="num">17</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-    <!-- Archive Section -->
-    <div id="archive" class="section">
-      <h2>📚 Archive</h2>
-      <ul class="linklist">
-        <li><a href="week-1-recap.html">Week 1 Recap</a></li>
-        <li><a href="week-2-recap.html">Week 2 Recap</a></li>
-        <li><a href="week-3-recap.html">Week 3 Recap</a></li>
-        <li><a href="week-4-recap.html">Week 4 Recap</a></li>
-        <li><a href="all-player-profiles.html">All Player Profiles</a></li>
-      </ul>
-    </div>
+      <div class="card pad">
+        <div class="eyebrow"><span class="tag">Quick links</span></div>
+        <div class="mini">
+          <div><a href="week-5-league-notes.html">Week 5 League Notes</a></div>
+          <div><a href="week-5-recap-pink-whitney.html">Canes Recap vs Pink Whitney</a></div>
+          <div><a href="opinion-who-is-serious.html">Ellison Opinion</a></div>
+        </div>
+      </div>
 
+      <div class="card pad">
+        <div class="eyebrow"><span class="tag">Publishing cadence</span></div>
+        <div class="mini">
+          <div><strong>Wed:</strong> League Notes</div>
+          <div><strong>Thu:</strong> Canes Opinion</div>
+          <div><strong>Fri:</strong> Power Rankings / Controversy</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="footer">
-    © 2026 Rinkside Report — All rights reserved
-  </div>
-
+  <div class="footer">© 2026 Rinkside Report • Fan-made league beat page</div>
 </body>
 </html>
