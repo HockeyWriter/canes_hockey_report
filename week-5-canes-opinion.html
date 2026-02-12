@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opinion: The forwards can’t keep hiding behind structure</title>
+  <style>
+    :root{
+      --bg:#0b0c0f; --ink:#121212; --muted:#6b7280; --rule:#e6e6e6;
+      --paper:#ffffff; --chip:#f3f4f6; --shadow:0 8px 28px rgba(16,24,40,.06);
+      --op:#991b1b; --opbg:#fee2e2; --opborder:#fecaca;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:#f6f7f9;
+      color:var(--ink);
+      line-height:1.55;
+    }
+    .topbar{
+      background:var(--bg);
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;gap:10px;align-items:baseline;font-weight:700;letter-spacing:.2px;white-space:nowrap;
+    }
+    .brand .dot{width:10px;height:10px;border-radius:2px;background:#fff;opacity:.9;display:inline-block}
+    .brand span{font-size:14px;opacity:.9}
+    .brand strong{font-size:16px}
+    .nav{display:flex;gap:16px;font-size:13px;opacity:.88;white-space:nowrap;overflow:auto}
+    .nav a{color:#fff;text-decoration:none}
+    .nav a:hover{opacity:.8}
+
+    .wrap{max-width:920px;margin:0 auto;padding:26px 18px 60px}
+    .paper{background:var(--paper);border:1px solid #ededed;border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+    .article{padding:34px}
+    @media(max-width:560px){.article{padding:22px 18px}}
+
+    .eyebrow{
+      font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--op);
+      display:flex;gap:10px;align-items:center;margin-bottom:10px
+    }
+    .pill{
+      background:var(--opbg);
+      border:1px solid var(--opborder);
+      padding:3px 10px;border-radius:999px;
+      font-weight:900;color:var(--op);
+    }
+
+    h1{margin:10px 0 12px;font-size:40px;line-height:1.12;letter-spacing:-.02em}
+    .subhead{font-size:18px;color:#374151;max-width:76ch;margin:0 0 18px}
+
+    figure{margin:22px 0;}
+    figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+
+    .byline{
+      display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+      padding:16px 0 0;margin:18px 0 22px;border-top:1px solid var(--rule);
+      font-size:13px;color:var(--muted);
+    }
+    .byline strong{color:#111827}
+    .sep{opacity:.35}
+
+    .content{
+      font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+      font-size:19px;
+      max-width:76ch;
+    }
+    .content p{margin:0 0 20px}
+    .content h2{
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:16px;letter-spacing:.08em;text-transform:uppercase;
+      margin:34px 0 12px;color:#111827;
+    }
+
+    .pull{
+      border-left:4px solid var(--op);
+      padding:8px 0 8px 16px;
+      margin:26px 0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:17px;
+      color:#111827;
+    }
+    .pull em{color:#374151;font-style:normal}
+
+    .footer{max-width:920px;margin:0 auto;padding:10px 18px 40px;color:var(--muted);font-size:12px;text-align:center}
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Rinkside Report</strong>
+      <span>Opinion</span>
+    </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="week-5-league-notes.html">League Notes</a>
+      <a href="week-5-recap-pink-whitney.html">Recap</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="paper">
+      <div class="article">
+        <div class="eyebrow">
+          <span class="pill">Opinion</span>
+          <span>Canes</span>
+        </div>
+
+        <h1>The forwards can’t keep hiding behind structure</h1>
+        <p class="subhead">
+          Five weeks in, effort isn’t the debate. The problem is decisiveness — and the longer the Canes wait for offense to arrive, the more it becomes a choice.
+        </p>
+
+        <!-- HERO IMAGE -->
+        <figure>
+          <img
+            src="images/week-5/opinion-under-pressure.png"
+            alt="Canes players on the bench with an 'Under Pressure' opinion headline"
+            style="width:100%; border-radius:12px;"
+          />
+          <figcaption>
+            The Canes are structured and competitive — but the offense remains concentrated, conservative, and late to arrive.
+          </figcaption>
+        </figure>
+
+        <div class="byline">
+          <div>By <strong>Mark Ellison</strong>, Columnist</div>
+          <div class="sep">•</div>
+          <div>Thursday Opinion</div>
+          <div class="sep">•</div>
+          <div>Week 5</div>
+        </div>
+
+        <div class="content">
+          <p>
+            Five weeks is not a small sample anymore. If this were two weeks, you’d call it variance. If it were three, you’d call it adjustment.
+            At five? It’s identity.
+          </p>
+
+          <p>
+            The Canes are not disorganized. They are not soft. They are not getting run out of buildings. They’re losing on thin margins while
+            insisting the process will eventually solve a problem that is becoming increasingly obvious: the forwards are not driving enough of the offense.
+          </p>
+
+          <div class="pull">
+            “If your best offense is coming from the blue line, that’s either a feature — or a warning.”
+          </div>
+
+          <h2>The defense is deciding games</h2>
+          <p>
+            David Marples initiates exits, transports pucks, and creates close-range looks off his skating. Ken Lee shoots through traffic and creates rebounds.
+            Garrett Ure turns exits into controlled entries more often than not. The back end is not begging for help — it is providing it.
+          </p>
+
+          <p>
+            That’s the uncomfortable truth: the Canes’ best offensive sequences are often started — and sometimes finished — by defensemen.
+            Which brings us to the part nobody wants to say out loud.
+          </p>
+
+          <h2>The forwards are playing cautious hockey</h2>
+          <p>
+            Andrew Sands is doing what a first-line center is supposed to do: generating shots from dangerous areas, simplifying under pressure, elevating late.
+            Ryan Kowal creates chaos and rebounds through volume. But too much of the forward group plays like their first priority is avoiding the mistake, not forcing the defense backward.
+          </p>
+
+          <p>
+            The neutral zone has become a place where the Canes try not to lose the puck rather than try to win it. Chips without support. Late passes into closed lanes.
+            Entries that die before they become pressure. That isn’t lack of effort — it’s lack of conviction.
+          </p>
+
+          <h2>The six-man unit tells the truth</h2>
+          <p>
+            If you want to know who a staff trusts, don’t listen to quotes. Watch who hits the ice when the goalie is pulled.
+          </p>
+
+          <p>
+            In the biggest moments, the Canes lean on the same core: Sands, Alvarado, Ken Lee, Marples, Pucci — sometimes Chad.
+            The forwards sitting down the bench are telling too: Kowal, Jackson Brown, Eugene Oh.
+          </p>
+
+          <p>
+            That isn’t personal. It’s a scoreboard decision. But it also reveals the real issue: if certain forwards aren’t trusted in high-leverage minutes,
+            the problem isn’t depth — it’s production.
+          </p>
+
+          <h2>And yes, this comes back to the bench</h2>
+          <p>
+            This is not a call for firings. It’s a call for evolution.
+          </p>
+
+          <p>
+            Matt Callahan deserves credit for structure. His teams stay connected. They don’t cheat defense. They don’t implode.
+            But structure without adjustment becomes rigidity, and five weeks is enough time to ask why the response hasn’t been more aggressive.
+          </p>
+
+          <p>
+            If the forwards aren’t producing, why hasn’t a more offense-heavy defenseman been tested at wing in high-leverage moments?
+            If the young forwards are risk-avoidant, why not force the issue with deployment? If the offense keeps arriving only when urgency is mandatory,
+            why not manufacture urgency earlier?
+          </p>
+
+          <div class="pull">
+            <em>In a 12-week season, waiting isn’t neutral. It’s expensive.</em>
+          </div>
+
+          <h2>The bottom line</h2>
+          <p>
+            The Canes can keep telling themselves they’re close. The standings are tight enough that they might be right.
+            But the league has already started sorting teams on goal differential and total goals — and neither tiebreaker rewards caution.
+          </p>
+
+          <p>
+            Five weeks in, it’s time to stop asking whether the Canes are playing hard enough and start asking the harder question:
+            are the forwards willing to decide games — or seen content to survive them until the third?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">© 2026 Rinkside Report</div>
+  </div>
+</body>
+</html>
